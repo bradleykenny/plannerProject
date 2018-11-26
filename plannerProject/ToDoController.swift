@@ -8,7 +8,7 @@
 
 import UIKit
 
-var thingsToDo = ["What", "Am", "I", "Doing", "?"]
+var thingsToDo = ["22nd Nov, 2018", "23rd Nov, 2018", "24th Nov, 2018", "25th Nov, 2018", "26th Nov, 2018"]
 var selected = 0
 
 class ToDoController: UITableViewController {
@@ -35,8 +35,7 @@ class ToDoController: UITableViewController {
 		selected = indexPath.row
 		self.performSegue(withIdentifier: "toView", sender: self)
 	}
-    
-
+	
     /*
     // MARK: - Navigation
 
