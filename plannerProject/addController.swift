@@ -10,10 +10,17 @@ import UIKit
 
 class addController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var input1: UITextField!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+		input1.borderStyle = UITextField.BorderStyle.none
+		
+		// indents text in textfield
+		let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:0))
+		input1.leftViewMode = UITextField.ViewMode.always
+		input1.leftView = spacerView
     }
     
 
