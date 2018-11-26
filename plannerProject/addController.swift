@@ -14,7 +14,8 @@ class addController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+		
+		// do any additional setup after loading the view
 		input1.borderStyle = UITextField.BorderStyle.none
 		
 		// indents text in textfield
