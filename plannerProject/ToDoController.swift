@@ -15,20 +15,23 @@ class ToDoController: UITableViewController {
 	
 	@IBOutlet var toDoTable: UITableView!
 	
+	// returns number of items in array
 	public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return (thingsToDo.count)
 	}
 	
+	// fills the cells with content from the array above (thingsToDo)
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 			let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
 			cell.textLabel?.text = thingsToDo[indexPath.row]
-			return(cell)
+		
+		return(cell)
 	}
 	
+	// everything that will happen once the app has loaded
 	override func viewDidLoad() {
         super.viewDidLoad()
-		self.title = "Things"
-		// Do any additional setup after loading the view.
+		self.title = "Things" // sets title of tab
     }
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

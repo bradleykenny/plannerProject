@@ -44,29 +44,32 @@
             </objects>
             <point key="canvasLocation" x="-574" y="1282"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Controller-->
         <scene sceneID="EAA-OX-tRk">
             <objects>
-                <viewController id="8dG-kR-yZm" sceneMemberID="viewController">
+                <viewController id="8dG-kR-yZm" customClass="addController" customModule="plannerProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oIj-R7-cZw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="paW-Mh-9Bg">
-                                <rect key="frame" x="16" y="84" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="35" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="paW-Mh-9Bg">
+                                <rect key="frame" x="16" y="82" width="343" height="42"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="H5S-cB-0lW"/>
-                            <constraint firstItem="paW-Mh-9Bg" firstAttribute="top" secondItem="YoF-uy-eKz" secondAttribute="top" constant="20" id="X6H-NM-B3V"/>
+                            <constraint firstItem="paW-Mh-9Bg" firstAttribute="top" secondItem="YoF-uy-eKz" secondAttribute="top" constant="18" id="X6H-NM-B3V"/>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="paW-Mh-9Bg" secondAttribute="trailing" constant="16" id="qa1-HA-ENM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YoF-uy-eKz"/>
                     </view>
+                    <connections>
+                        <outlet property="input1" destination="paW-Mh-9Bg" id="thu-lw-Dn8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hi-MX-wot" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
