@@ -15,16 +15,18 @@ struct ToDo {
 	var date: Date
 	var title: String
 	var todos: [String]
+	var thoughts: String
 	
 	init(date: Date) {
 		self.date = date
 		self.title = ""
 		self.todos = []
+		self.thoughts = ""
 	}
 	
 	func toString() -> String {
-		// TODO: return the date var in the form of DDth MM, YYYY.
-		//       For example, 28th March, 1998.
+		// Return the date var in the form of DDth MM, YYYY.
+		// For example, 28th March, 1998.
 		let date = self.date
 		let calendar = Calendar.current
 		let formatter = DateFormatter()
