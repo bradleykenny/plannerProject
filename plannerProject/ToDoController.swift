@@ -57,7 +57,7 @@ struct ToDo {
 		formatter.dateFormat = "YYYY"
 		inWords.append(", " + formatter.string(from: date))
 		
-		return ""
+		return inWords
 	}
 }
 
@@ -74,7 +74,6 @@ class ToDoController: UITableViewController {
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 			let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
 			cell.textLabel?.text = thingsToDo[indexPath.row].toString()
-		print(thingsToDo[indexPath.row].toString())
 		
 		return(cell)
 	}
@@ -83,13 +82,20 @@ class ToDoController: UITableViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = "Things" // sets title of tab
-		let one = ToDo(date: Date(timeInterval: 86400 * 1, since: Date()))
-		let two = ToDo(date: Date(timeInterval: 86400 * 2, since: Date()))
-		let three = ToDo(date: Date(timeInterval: 86400 * 3, since: Date()))
+		
+		/*** BEGIN TEST DATA ***/
+		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()))
+		let two = ToDo(date: Date(timeInterval: -86400 * 2, since: Date()))
+		let three = ToDo(date: Date(timeInterval: -86400 * 3, since: Date()))
+		let four = ToDo(date: Date(timeInterval: -86400 * 4, since: Date()))
+		let five = ToDo(date: Date(timeInterval: -86400 * 5, since: Date()))
+		
 		thingsToDo.append(one)
 		thingsToDo.append(two)
 		thingsToDo.append(three)
-		
+		thingsToDo.append(four)
+		thingsToDo.append(five)
+		/*** END TEST DATA ***/
 		
     }
 	
