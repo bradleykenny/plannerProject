@@ -8,9 +8,58 @@
 
 import UIKit
 
-var thingsToDo = ["22nd Nov, 2018", "23rd Nov, 2018", "24th Nov, 2018", "25th Nov, 2018", "26th Nov, 2018", "1st Dec, 2018"]
-var thingsToDo2: Dictionary<Date, String> = [:]
+var thingsToDo: [ToDo] = []
 var selected = 0
+
+struct ToDo {
+	var date: Date
+	var title: String
+	var todos: [String]
+	
+	init(date: Date) {
+		self.date = date
+		self.title = ""
+		self.todos = []
+	}
+	
+	func toString() -> String {
+		// TODO: return the date var in the form of DDth MM, YYYY.
+		//       For example, 28th March, 1998.
+		let date = self.date
+		let calendar = Calendar.current
+		let formatter = DateFormatter()
+		let day = calendar.component(.day, from: date)
+		
+		var inWords: String = ""
+		
+		var mod: Int = 0
+		if (day < 20 && day >= 10) {
+			mod = 10
+		} else if (day >= 20 && day < 30) {
+			mod = 20
+		} else if (day >= 30) {
+			mod = 30
+		}
+		
+		if (day % mod == 1) {
+			inWords.append(String(day) + "st")
+		} else if (day % mod == 2) {
+			inWords.append(String(day) + "nd")
+		} else if (day % mod == 3) {
+			inWords.append(String(day) + "rd")
+		} else {
+			inWords.append(String(day) + "th")
+		}
+		
+		formatter.dateFormat = "MMMM"
+		inWords.append(" " + formatter.string(from: date))
+		
+		formatter.dateFormat = "YYYY"
+		inWords.append(", " + formatter.string(from: date))
+		
+		return ""
+	}
+}
 
 class ToDoController: UITableViewController {
 	
@@ -24,7 +73,8 @@ class ToDoController: UITableViewController {
 	// fills the cells with content from the array above (thingsToDo)
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 			let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-			cell.textLabel?.text = thingsToDo[indexPath.row]
+			cell.textLabel?.text = thingsToDo[indexPath.row].toString()
+		print(thingsToDo[indexPath.row].toString())
 		
 		return(cell)
 	}
@@ -33,7 +83,19 @@ class ToDoController: UITableViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = "Things" // sets title of tab
+		let one = ToDo(date: Date(timeInterval: 86400 * 1, since: Date()))
+		let two = ToDo(date: Date(timeInterval: 86400 * 2, since: Date()))
+		let three = ToDo(date: Date(timeInterval: 86400 * 3, since: Date()))
+		thingsToDo.append(one)
+		thingsToDo.append(two)
+		thingsToDo.append(three)
+		
+		
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		toDoTable.reloadData()
+	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		selected = indexPath.row

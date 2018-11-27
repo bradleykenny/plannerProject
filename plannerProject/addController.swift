@@ -24,7 +24,15 @@ class addController: UIViewController {
 		input1.leftView = spacerView
     }
     
-
+	@IBAction func addToArray(_ sender: Any) {
+		if (input1.text != "") {
+			var newItem = ToDo(date: Date())
+			newItem.title = input1.text!
+			thingsToDo.append(newItem)
+			self.navigationController?.popViewController(animated: true)
+		}
+	}
+	
     /*
     // MARK: - Navigation
 

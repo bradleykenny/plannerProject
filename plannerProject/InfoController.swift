@@ -14,7 +14,7 @@ class InfoController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		textLabel.text = thingsToDo[selected]
+		textLabel.text = thingsToDo[selected].toString()
         // Do any additional setup after loading the view.
     }
     

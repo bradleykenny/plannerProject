@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="3oY-A4-PJe">
             <objects>
                 <viewController id="JRO-4p-Xz8" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9mC-zk-5Rj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="bVf-mf-oNJ"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="bVf-mf-oNJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHF-Sk-VBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,11 +58,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhN-Tv-Etm">
+                                <rect key="frame" x="16" y="132" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToArray:" destination="8dG-kR-yZm" eventType="touchUpInside" id="4KH-ns-zw7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="H5S-cB-0lW"/>
+                            <constraint firstItem="LhN-Tv-Etm" firstAttribute="top" secondItem="paW-Mh-9Bg" secondAttribute="bottom" constant="8" id="VSd-zH-XiQ"/>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="top" secondItem="YoF-uy-eKz" secondAttribute="top" constant="18" id="X6H-NM-B3V"/>
+                            <constraint firstItem="LhN-Tv-Etm" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="Yr2-g3-pvp"/>
+                            <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="LhN-Tv-Etm" secondAttribute="trailing" constant="16" id="a2K-aM-IZa"/>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="paW-Mh-9Bg" secondAttribute="trailing" constant="16" id="qa1-HA-ENM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YoF-uy-eKz"/>
@@ -161,7 +174,7 @@
         <scene sceneID="JZm-bU-kcQ">
             <objects>
                 <navigationController title="To Do" id="OZg-V2-ifW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Omk-Ag-qbw"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Omk-Ag-qbw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WFL-Fh-G9c">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
