@@ -71,6 +71,14 @@
                                     <action selector="addToArray:" destination="8dG-kR-yZm" eventType="touchUpInside" id="4KH-ns-zw7"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="htO-2N-im7">
+                                <rect key="frame" x="0.0" y="328" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <date key="date" timeIntervalSinceReferenceDate="565066694.92614698">
+                                    <!--2018-11-28 02:58:14 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -86,6 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="LhN-Tv-Etm" id="Xpf-iO-ipT"/>
+                        <outlet property="datePicker" destination="htO-2N-im7" id="WQ7-4N-Ob5"/>
                         <outlet property="input1" destination="paW-Mh-9Bg" id="thu-lw-Dn8"/>
                     </connections>
                 </viewController>

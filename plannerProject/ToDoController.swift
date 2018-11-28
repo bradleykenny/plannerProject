@@ -34,7 +34,7 @@ struct ToDo {
 		
 		var inWords: String = ""
 		
-		var mod: Int = 0
+		var mod: Int = 10
 		if (day < 20 && day >= 10) {
 			mod = 10
 		} else if (day >= 20 && day < 30) {
@@ -43,14 +43,18 @@ struct ToDo {
 			mod = 30
 		}
 		
-		if (day % mod == 1) {
-			inWords.append(String(day) + "st")
-		} else if (day % mod == 2) {
-			inWords.append(String(day) + "nd")
-		} else if (day % mod == 3) {
-			inWords.append(String(day) + "rd")
-		} else {
+		if (day == 11 || day == 12 || day == 13) {
 			inWords.append(String(day) + "th")
+		} else {
+			if (day % mod == 1) {
+				inWords.append(String(day) + "st")
+			} else if (day % mod == 2) {
+				inWords.append(String(day) + "nd")
+			} else if (day % mod == 3) {
+				inWords.append(String(day) + "rd")
+			} else {
+				inWords.append(String(day) + "th")
+			}
 		}
 		
 		formatter.dateFormat = "MMMM"

@@ -12,6 +12,7 @@ class addController: UIViewController {
 
 	@IBOutlet weak var input1: UITextField!
 	@IBOutlet weak var addButton: UIButton!
+	@IBOutlet weak var datePicker: UIDatePicker!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class addController: UIViewController {
 		input1.leftViewMode = UITextField.ViewMode.always
 		input1.leftView = spacerView
 		
-		view.backgroundColor = UIColor.darkGray
+		// view.backgroundColor = UIColor.darkGray
 		addButton.tintColor = nil
 		addButton.layer.cornerRadius = 8
 		addButton.setTitleColor(UIColor.white, for: .normal)
@@ -34,7 +35,9 @@ class addController: UIViewController {
 		if (input1.text != "") {
 			var newItem = ToDo(date: Date())
 			newItem.title = input1.text!
+			newItem.date = datePicker.date
 			thingsToDo.append(newItem)
+			thingsToDo = thingsToDo.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
 			self.navigationController?.popViewController(animated: true)
 		}
 	}
