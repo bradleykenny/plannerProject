@@ -15,7 +15,11 @@ class InfoController: UIViewController {
 	@IBOutlet weak var thoughtBox: UITextView!
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad()
+		
+		descriptionBox.isEditable = false
+		thoughtBox.isEditable = false
+		
 		textLabel.text = thingsToDo[selected].toString()
 		if (thingsToDo[selected].title != "") {
 			descriptionBox.text = thingsToDo[selected].title

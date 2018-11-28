@@ -47,7 +47,7 @@ class addController: UIViewController, UITextFieldDelegate {
 				thingsToDo = thingsToDo.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
 				self.navigationController?.popViewController(animated: true)
 			} else {
-				let alert = UIAlertController(title: "Already there!", message: "The date you are trying to add already has an entry in the agenda.", preferredStyle: .alert)
+				let alert = UIAlertController(title: "Already exists!", message: "The date you are trying to add already has an entry in the agenda.", preferredStyle: .alert)
 				alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
 				self.present(alert, animated: true)
 				

@@ -193,6 +193,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uHV-RQ-cjb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xXm-CQ-VgR">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="fjh-2f-Nhy"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionBox" destination="GFO-lY-g4a" id="Lb2-mT-UKL"/>
                         <outlet property="textLabel" destination="hvT-rn-Hlm" id="pWH-44-xYt"/>
