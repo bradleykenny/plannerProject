@@ -79,7 +79,7 @@ class ToDoController: UITableViewController {
 		let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
 		cell.textLabel?.text = thingsToDo[indexPath.row].toString()
 		
-		cell.backgroundColor = UIColor.yellow
+		// cell.backgroundColor = UIColor.yellow
 		
 		return(cell)
 	}
@@ -122,5 +122,33 @@ class ToDoController: UITableViewController {
 			thingsToDo.remove(at: indexPath.row)
 			toDoTable.reloadData()
 		}
+	}
+	
+	public func getDay(date: Date) -> Int {
+		let calendar = Calendar.current
+		return calendar.component(.day, from: date)
+	}
+	
+	public func getMonth(date: Date) -> Int {
+		let calendar = Calendar.current
+		return calendar.component(.month, from: date)
+	}
+	
+	public func getYear(date: Date) -> Int {
+		let calendar = Calendar.current
+		return calendar.component(.year, from: date)
+	}
+	
+	public func compareDatesToArr(arr: [ToDo], date: Date) -> Bool {
+		for temp in arr {
+			if (getYear(date: temp.date) == getYear(date: date)) {
+				if (getMonth(date: temp.date) == getMonth(date: date)) {
+					if (getDay(date: temp.date) == getDay(date: date)) {
+						return true
+					}
+				}
+			}
+		}
+		return false
 	}
 }

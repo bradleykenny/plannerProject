@@ -53,14 +53,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="35" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="paW-Mh-9Bg">
-                                <rect key="frame" x="16" y="82" width="343" height="41"/>
+                                <rect key="frame" x="16" y="82" width="343" height="42"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhN-Tv-Etm">
                                 <rect key="frame" x="16" y="552" width="343" height="50"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BUs-FN-p2D"/>
                                 </constraints>
@@ -84,7 +84,6 @@
                         <constraints>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="LhN-Tv-Etm" secondAttribute="trailing" constant="16" id="24H-T9-B35"/>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="H5S-cB-0lW"/>
-                            <constraint firstItem="LhN-Tv-Etm" firstAttribute="top" secondItem="paW-Mh-9Bg" secondAttribute="bottom" constant="429" id="Isp-Um-4rg"/>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="top" secondItem="YoF-uy-eKz" secondAttribute="top" constant="18" id="X6H-NM-B3V"/>
                             <constraint firstItem="LhN-Tv-Etm" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="dEV-9S-luM"/>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="paW-Mh-9Bg" secondAttribute="trailing" constant="16" id="qa1-HA-ENM"/>
@@ -151,9 +150,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-rn-Hlm">
-                                <rect key="frame" x="16" y="82" width="83.5" height="38.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-rn-Hlm">
+                                <rect key="frame" x="16" y="82" width="62" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
