@@ -102,12 +102,22 @@ class ToDoController: UITableViewController {
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
+		// every time the view appears, we reload the table data
 		toDoTable.reloadData()
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		// gets currently selected item's index in array
 		selected = indexPath.row
 		self.performSegue(withIdentifier: "toView", sender: self)
+	}
+	
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		// this checks the right to left swipe and removes items from the array
+		if (editingStyle == UITableViewCell.EditingStyle.delete) {
+			thingsToDo.remove(at: indexPath.row)
+			toDoTable.reloadData()
+		}
 	}
 	
     /*
