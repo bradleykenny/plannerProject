@@ -83,7 +83,7 @@ class ToDoController: UITableViewController {
 	// everything that will happen once the app has loaded
 	override func viewDidLoad() {
         super.viewDidLoad()
-		self.title = "Things" // sets title of tab
+		self.title = "Agenda" // sets title of tab
 		
 		/*** BEGIN TEST DATA ***/
 		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()))
