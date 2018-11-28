@@ -35,9 +35,7 @@ struct ToDo {
 		var inWords: String = ""
 		
 		var mod: Int = 10
-		if (day < 20 && day >= 10) {
-			mod = 10
-		} else if (day >= 20 && day < 30) {
+		if (day >= 20 && day < 30) {
 			mod = 20
 		} else if (day >= 30) {
 			mod = 30
