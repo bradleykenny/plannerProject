@@ -24,7 +24,7 @@ struct ToDo {
 		self.thoughts = ""
 	}
 	
-	func toString() -> String {
+	func toString(shortMonth: Bool, includeDay: Bool, includeYear: Bool) -> String {
 		// Return the date var in the form of DDth MM, YYYY.
 		// For example, 28th March, 1998.
 		let date = self.date
@@ -33,6 +33,11 @@ struct ToDo {
 		let day = calendar.component(.day, from: date)
 		
 		var inWords: String = ""
+		
+		if (includeDay) {
+			formatter.dateFormat = "E"
+			inWords.append(formatter.string(from: date) + " ")
+		}
 		
 		var mod: Int = 10
 		if (day >= 20 && day < 30) {
@@ -55,11 +60,17 @@ struct ToDo {
 			}
 		}
 		
-		formatter.dateFormat = "MMMM"
+		if (shortMonth) {
+			formatter.dateFormat = "MMM"
+		} else {
+			formatter.dateFormat = "MMMM"
+		}
 		inWords.append(" " + formatter.string(from: date))
 		
-		formatter.dateFormat = "YYYY"
-		inWords.append(", " + formatter.string(from: date))
+		if (includeYear) {
+			formatter.dateFormat = "YYYY"
+			inWords.append(", " + formatter.string(from: date))
+		}
 		
 		return inWords
 	}
@@ -77,7 +88,7 @@ class ToDoController: UITableViewController {
 	// fills the cells with content from the array above (thingsToDo)
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-		cell.textLabel?.text = thingsToDo[indexPath.row].toString()
+		cell.textLabel?.text = thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true)
 		
 		// cell.backgroundColor = UIColor.yellow
 		
@@ -87,6 +98,9 @@ class ToDoController: UITableViewController {
 	// everything that will happen once the app has loaded
 	override func viewDidLoad() {
         super.viewDidLoad()
+		navigationController?.navigationBar.prefersLargeTitles = true
+		// navigationController?.navigationBar.backgroundColor = UIColor.blue
+		// navigationController?.navigationBar.barTintColor = UIColor.green
 		self.title = "Agenda" // sets title of tab
 		
 		/*** BEGIN TEST DATA ***/
@@ -119,8 +133,21 @@ class ToDoController: UITableViewController {
 	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		// this checks the right to left swipe and removes items from the array
 		if (editingStyle == UITableViewCell.EditingStyle.delete) {
-			thingsToDo.remove(at: indexPath.row)
-			toDoTable.reloadData()
+			let alert = UIAlertController(title: "Delete Day", message: "Are you sure you want to delete the day from your agenda? This cannot be undone.", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+				thingsToDo.remove(at: indexPath.row)
+				self.toDoTable.reloadData()
+			}))
+			alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+			self.present(alert, animated: true)
+		}
+	}
+	
+	@IBAction func editMode(_ sender: Any) {
+		if (toDoTable.isEditing == true) {
+			toDoTable.isEditing = false
+		} else {
+			toDoTable.isEditing = true
 		}
 	}
 	

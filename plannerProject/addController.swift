@@ -17,7 +17,7 @@ class addController: UIViewController, UITextFieldDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.title = "Add New Date"
+		self.title = "New Plan"
 
 		// do any additional setup after loading the view
 		input1.borderStyle = UITextField.BorderStyle.none
