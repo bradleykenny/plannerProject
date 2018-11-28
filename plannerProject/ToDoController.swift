@@ -74,8 +74,10 @@ class ToDoController: UITableViewController {
 	
 	// fills the cells with content from the array above (thingsToDo)
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-			let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-			cell.textLabel?.text = thingsToDo[indexPath.row].toString()
+		let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+		cell.textLabel?.text = thingsToDo[indexPath.row].toString()
+		
+		cell.backgroundColor = UIColor.yellow
 		
 		return(cell)
 	}

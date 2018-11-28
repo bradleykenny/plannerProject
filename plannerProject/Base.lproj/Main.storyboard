@@ -53,15 +53,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="35" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="paW-Mh-9Bg">
-                                <rect key="frame" x="16" y="82" width="343" height="42"/>
+                                <rect key="frame" x="16" y="82" width="343" height="41"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhN-Tv-Etm">
-                                <rect key="frame" x="16" y="132" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="16" y="552" width="343" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BUs-FN-p2D"/>
+                                </constraints>
+                                <state key="normal" title="Add">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -71,16 +74,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="LhN-Tv-Etm" secondAttribute="trailing" constant="16" id="24H-T9-B35"/>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="H5S-cB-0lW"/>
-                            <constraint firstItem="LhN-Tv-Etm" firstAttribute="top" secondItem="paW-Mh-9Bg" secondAttribute="bottom" constant="8" id="VSd-zH-XiQ"/>
+                            <constraint firstItem="LhN-Tv-Etm" firstAttribute="top" secondItem="paW-Mh-9Bg" secondAttribute="bottom" constant="429" id="Isp-Um-4rg"/>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="top" secondItem="YoF-uy-eKz" secondAttribute="top" constant="18" id="X6H-NM-B3V"/>
-                            <constraint firstItem="LhN-Tv-Etm" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="Yr2-g3-pvp"/>
-                            <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="LhN-Tv-Etm" secondAttribute="trailing" constant="16" id="a2K-aM-IZa"/>
+                            <constraint firstItem="LhN-Tv-Etm" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="dEV-9S-luM"/>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="paW-Mh-9Bg" secondAttribute="trailing" constant="16" id="qa1-HA-ENM"/>
+                            <constraint firstItem="YoF-uy-eKz" firstAttribute="bottom" secondItem="LhN-Tv-Etm" secondAttribute="bottom" constant="16" id="wez-Vq-HXj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YoF-uy-eKz"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="LhN-Tv-Etm" id="Xpf-iO-ipT"/>
                         <outlet property="input1" destination="paW-Mh-9Bg" id="thu-lw-Dn8"/>
                     </connections>
                 </viewController>
