@@ -13,6 +13,9 @@ class addController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var input1: UITextField!
 	@IBOutlet weak var addButton: UIButton!
 	@IBOutlet weak var datePicker: UIDatePicker!
+	@IBOutlet weak var showDateButton: UIButton!
+	
+	let formatter = DateFormatter()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,9 +37,18 @@ class addController: UIViewController, UITextFieldDelegate {
 		addButton.setTitleColor(UIColor.white, for: .normal)
 		
 		// datePicker set-up
-		datePicker.datePickerMode = UIDatePicker.Mode.date
+		datePicker?.datePickerMode = UIDatePicker.Mode.date
+		datePicker.isHidden = true
+	
+		formatter.dateFormat = "E dd MMMM, yyyy"
+		
+		showDateButton.setTitle(formatter.string(from: datePicker.date), for: .normal)
+		showDateButton.layer.cornerRadius = 5.0
+		let color = UIColor(red: 0, green: 122, blue: 255, alpha: 1)
+		showDateButton.layer.backgroundColor = color.cgColor
+		showDateButton.tintColor = UIColor.clear
     }
-    
+	
 	@IBAction func addToArray(_ sender: Any) {
 		if (input1.text != "") {
 			let temp = ToDoController()
@@ -55,8 +67,15 @@ class addController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		self.view.endEditing(true)
-		return false
+	@IBAction func showDatePicker(_ sender: Any) {
+		if (datePicker.isHidden) {
+			datePicker.isHidden = false
+			showDateButton.setTitle(formatter.string(from: datePicker.date), for: .normal)
+		} else if (!datePicker.isHidden) {
+			datePicker.isHidden = true
+			showDateButton.setTitle(formatter.string(from: datePicker.date), for: .normal)
+		}
 	}
+	
+	
 }

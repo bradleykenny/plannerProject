@@ -72,20 +72,36 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="htO-2N-im7">
-                                <rect key="frame" x="0.0" y="328" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="258" width="375" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <date key="date" timeIntervalSinceReferenceDate="565066694.92614698">
                                     <!--2018-11-28 02:58:14 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeP-h5-G1V">
+                                <rect key="frame" x="16" y="189" width="343" height="52"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDatePicker:" destination="8dG-kR-yZm" eventType="touchUpInside" id="9EQ-T0-trC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="LhN-Tv-Etm" secondAttribute="trailing" constant="16" id="24H-T9-B35"/>
+                            <constraint firstItem="oeP-h5-G1V" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="8g7-Pi-3az"/>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="H5S-cB-0lW"/>
                             <constraint firstItem="paW-Mh-9Bg" firstAttribute="top" secondItem="YoF-uy-eKz" secondAttribute="top" constant="18" id="X6H-NM-B3V"/>
                             <constraint firstItem="LhN-Tv-Etm" firstAttribute="leading" secondItem="YoF-uy-eKz" secondAttribute="leading" constant="16" id="dEV-9S-luM"/>
+                            <constraint firstItem="oeP-h5-G1V" firstAttribute="top" secondItem="paW-Mh-9Bg" secondAttribute="bottom" constant="13" id="kAo-a3-lgc"/>
+                            <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="oeP-h5-G1V" secondAttribute="trailing" constant="16" id="oVa-gs-kxO"/>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="trailing" secondItem="paW-Mh-9Bg" secondAttribute="trailing" constant="16" id="qa1-HA-ENM"/>
                             <constraint firstItem="YoF-uy-eKz" firstAttribute="bottom" secondItem="LhN-Tv-Etm" secondAttribute="bottom" constant="16" id="wez-Vq-HXj"/>
                         </constraints>
@@ -95,6 +111,7 @@
                         <outlet property="addButton" destination="LhN-Tv-Etm" id="Xpf-iO-ipT"/>
                         <outlet property="datePicker" destination="htO-2N-im7" id="WQ7-4N-Ob5"/>
                         <outlet property="input1" destination="paW-Mh-9Bg" id="thu-lw-Dn8"/>
+                        <outlet property="showDateButton" destination="oeP-h5-G1V" id="QdZ-Dc-k24"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hi-MX-wot" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,7 +145,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do" id="MNN-e3-bqa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="60T-KN-kjd">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="60T-KN-kjd">
                             <connections>
                                 <action selector="editMode:" destination="Xkc-5E-1Kl" id="ZDs-zz-98d"/>
                             </connections>
@@ -140,6 +157,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="60T-KN-kjd" id="cQS-Jw-2rD"/>
                         <outlet property="toDoTable" destination="K28-5X-Ecp" id="9M8-Da-LQX"/>
                     </connections>
                 </tableViewController>
@@ -147,7 +165,7 @@
             </objects>
             <point key="canvasLocation" x="1046" y="977"/>
         </scene>
-        <!--Info Controller-->
+        <!--Date-->
         <scene sceneID="uHM-Za-XBf">
             <objects>
                 <viewController id="rgB-Wn-CiZ" customClass="InfoController" customModule="plannerProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -155,13 +173,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-rn-Hlm">
-                                <rect key="frame" x="16" y="134" width="62" height="33.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-lY-g4a">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-lY-g4a">
                                 <rect key="frame" x="16" y="124" width="343" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">In this space, we will be able to do things such as list items we want to do, put in goals, and other items that are similar. You're seeing this text if nothing has been entered in the title field.</string>
@@ -185,21 +197,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GFO-lY-g4a" firstAttribute="top" secondItem="hvT-rn-Hlm" secondAttribute="bottom" constant="8" symbolic="YES" id="CTX-5T-K5y"/>
                             <constraint firstItem="GFO-lY-g4a" firstAttribute="trailing" secondItem="BOg-te-K2o" secondAttribute="trailingMargin" id="EeN-J6-e6o"/>
-                            <constraint firstItem="hvT-rn-Hlm" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="16" id="Sj8-Ko-gFq"/>
                             <constraint firstItem="uHV-RQ-cjb" firstAttribute="bottom" secondItem="GFO-lY-g4a" secondAttribute="bottom" constant="226" id="Vu3-SV-Xro"/>
-                            <constraint firstItem="hvT-rn-Hlm" firstAttribute="top" secondItem="uHV-RQ-cjb" secondAttribute="top" constant="18" id="lpC-xW-jXn"/>
-                            <constraint firstItem="GFO-lY-g4a" firstAttribute="leading" secondItem="hvT-rn-Hlm" secondAttribute="leading" id="phZ-kW-UlH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uHV-RQ-cjb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xXm-CQ-VgR">
+                    <navigationItem key="navigationItem" title="Date" id="xXm-CQ-VgR">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fjh-2f-Nhy"/>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionBox" destination="GFO-lY-g4a" id="Lb2-mT-UKL"/>
-                        <outlet property="textLabel" destination="hvT-rn-Hlm" id="pWH-44-xYt"/>
                         <outlet property="thoughtBox" destination="uCs-zC-hnN" id="5Pq-1w-AEy"/>
                     </connections>
                 </viewController>

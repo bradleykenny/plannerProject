@@ -79,6 +79,7 @@ struct ToDo {
 class ToDoController: UITableViewController {
 	
 	@IBOutlet var toDoTable: UITableView!
+	@IBOutlet weak var editButton: UIBarButtonItem!
 	
 	// returns number of items in array
 	public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,6 +103,7 @@ class ToDoController: UITableViewController {
 		// navigationController?.navigationBar.backgroundColor = UIColor.blue
 		// navigationController?.navigationBar.barTintColor = UIColor.green
 		self.title = "Agenda" // sets title of tab
+		editButton.title = "Edit"
 		
 		/*** BEGIN TEST DATA ***/
 		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()))
@@ -145,8 +147,10 @@ class ToDoController: UITableViewController {
 	
 	@IBAction func editMode(_ sender: Any) {
 		if (toDoTable.isEditing == true) {
+			editButton.title = "Edit"
 			toDoTable.isEditing = false
 		} else {
+			editButton.title = "Done"
 			toDoTable.isEditing = true
 		}
 	}

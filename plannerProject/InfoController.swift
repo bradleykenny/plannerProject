@@ -9,8 +9,7 @@
 import UIKit
 
 class InfoController: UIViewController {
-
-	@IBOutlet weak var textLabel: UILabel!
+	
 	@IBOutlet weak var descriptionBox: UITextView!
 	@IBOutlet weak var thoughtBox: UITextView!
 	
@@ -22,9 +21,7 @@ class InfoController: UIViewController {
 		
 		descriptionBox.isEditable = false
 		thoughtBox.isEditable = false
-		
-		// textLabel.text = thingsToDo[selected].toString(shortMonth: true, includeDay: true, includeYear: true)
-		textLabel.text = ""
+	
 		if (thingsToDo[selected].title != "") {
 			descriptionBox.text = thingsToDo[selected].title
 		}
