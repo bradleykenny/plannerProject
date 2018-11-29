@@ -148,9 +148,11 @@ class ToDoController: UITableViewController {
 	@IBAction func editMode(_ sender: Any) {
 		if (toDoTable.isEditing == true) {
 			editButton.title = "Edit"
+			editButton.style = .plain
 			toDoTable.isEditing = false
 		} else {
 			editButton.title = "Done"
+			editButton.style = .done
 			toDoTable.isEditing = true
 		}
 	}

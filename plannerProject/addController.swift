@@ -33,7 +33,7 @@ class addController: UIViewController, UITextFieldDelegate {
 
 		// view.backgroundColor = UIColor.darkGray
 		// addButton.tintColor = nil
-		addButton.layer.cornerRadius = 8
+		// addButton.layer.cornerRadius = 8
 		addButton.setTitleColor(UIColor.white, for: .normal)
 		
 		// datePicker set-up
@@ -44,9 +44,9 @@ class addController: UIViewController, UITextFieldDelegate {
 		
 		showDateButton.setTitle(formatter.string(from: datePicker.date), for: .normal)
 		showDateButton.layer.cornerRadius = 5.0
-		let color = UIColor(red: 0, green: 122, blue: 255, alpha: 1)
-		showDateButton.layer.backgroundColor = color.cgColor
-		showDateButton.tintColor = UIColor.clear
+		// let color = UIColor(red: 0, green: 122, blue: 255, alpha: 1)
+		// showDateButton.layer.backgroundColor = color.cgColor
+		// showDateButton.tintColor = UIColor.clear
     }
 	
 	@IBAction func addToArray(_ sender: Any) {

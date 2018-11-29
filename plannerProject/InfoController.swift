@@ -9,7 +9,7 @@
 import UIKit
 
 class InfoController: UIViewController {
-	
+
 	@IBOutlet weak var descriptionBox: UITextView!
 	@IBOutlet weak var thoughtBox: UITextView!
 	
