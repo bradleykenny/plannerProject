@@ -149,12 +149,11 @@ class ToDoController: UITableViewController {
 		if (toDoTable.isEditing == true) {
 			editButton.title = "Edit"
 			editButton.style = .plain
-			toDoTable.isEditing = false
 		} else {
 			editButton.title = "Done"
 			editButton.style = .done
-			toDoTable.isEditing = true
 		}
+		toDoTable.isEditing.toggle()
 	}
 	
 	public func getDay(date: Date) -> Int {

@@ -77,5 +77,9 @@ class addController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-	
+	// without this, pressing done will not hide the keyboard
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
 }

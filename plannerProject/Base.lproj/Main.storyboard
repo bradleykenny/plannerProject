@@ -195,7 +195,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8Ya-Jw-Qzx" firstAttribute="top" secondItem="GFO-lY-g4a" secondAttribute="bottom" constant="14" id="68s-sM-LsS"/>
                             <constraint firstItem="uHV-RQ-cjb" firstAttribute="bottom" secondItem="uCs-zC-hnN" secondAttribute="bottom" constant="115" id="AWf-ae-utX"/>
                             <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="GFO-lY-g4a" secondAttribute="trailing" constant="16" id="J8o-ox-F3z"/>
                             <constraint firstItem="uCs-zC-hnN" firstAttribute="top" secondItem="8Ya-Jw-Qzx" secondAttribute="bottom" constant="8" id="Yag-A1-Gjv"/>
@@ -205,7 +204,6 @@
                             <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="8Ya-Jw-Qzx" secondAttribute="trailing" constant="251" id="d8l-Om-EA2"/>
                             <constraint firstItem="8Ya-Jw-Qzx" firstAttribute="top" secondItem="GFO-lY-g4a" secondAttribute="bottom" constant="14" id="oAh-vs-1F8"/>
                             <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="uCs-zC-hnN" secondAttribute="trailing" constant="16" id="qx4-O9-ZtX"/>
-                            <constraint firstItem="uCs-zC-hnN" firstAttribute="top" secondItem="8Ya-Jw-Qzx" secondAttribute="bottom" constant="8" id="rbq-v0-Rad"/>
                             <constraint firstItem="8Ya-Jw-Qzx" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="16" id="z1u-NW-WYX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uHV-RQ-cjb"/>
@@ -226,7 +224,7 @@
         <scene sceneID="JZm-bU-kcQ">
             <objects>
                 <navigationController title="To Do" id="OZg-V2-ifW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="To Do" image="icon_todo_25" id="Omk-Ag-qbw"/>
+                    <tabBarItem key="tabBarItem" title="To Do" image="checklist@25" selectedImage="checklist@25" id="Omk-Ag-qbw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="WFL-Fh-G9c">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -241,6 +239,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_todo_25" width="18.75" height="18.75"/>
+        <image name="checklist@25" width="37.5" height="37.5"/>
     </resources>
 </document>
