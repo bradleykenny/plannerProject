@@ -17,9 +17,9 @@ struct ToDo {
 	var todos: [String]
 	var thoughts: String
 	
-	init(date: Date) {
+	init(date: Date, title: String) {
 		self.date = date
-		self.title = ""
+		self.title = title
 		self.todos = []
 		self.thoughts = ""
 	}
@@ -88,8 +88,9 @@ class ToDoController: UITableViewController {
 	
 	// fills the cells with content from the array above (thingsToDo)
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-		cell.textLabel?.text = thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true)
+		let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cell")
+		cell.textLabel?.text = thingsToDo[indexPath.row].title
+		cell.detailTextLabel?.text = thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true)
 		
 		// cell.backgroundColor = UIColor.yellow
 		
@@ -106,11 +107,11 @@ class ToDoController: UITableViewController {
 		editButton.title = "Edit"
 		
 		/*** BEGIN TEST DATA ***/
-		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()))
-		let two = ToDo(date: Date(timeInterval: -86400 * 2, since: Date()))
-		let three = ToDo(date: Date(timeInterval: -86400 * 3, since: Date()))
-		let four = ToDo(date: Date(timeInterval: -86400 * 4, since: Date()))
-		let five = ToDo(date: Date(timeInterval: -86400 * 5, since: Date()))
+		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()), title: "Day 1")
+		let two = ToDo(date: Date(timeInterval: -86400 * 2, since: Date()), title: "Day 2")
+		let three = ToDo(date: Date(timeInterval: -86400 * 3, since: Date()), title: "Day 3")
+		let four = ToDo(date: Date(timeInterval: -86400 * 4, since: Date()), title: "Day 4")
+		let five = ToDo(date: Date(timeInterval: -86400 * 5, since: Date()), title: "Day 5")
 		
 		thingsToDo.append(one)
 		thingsToDo.append(two)
