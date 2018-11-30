@@ -33,7 +33,8 @@ struct ToDo {
 		self.title = title
 		self.todos = []
 		self.thoughts = ""
-		self.tasks = [Task(description: "First one!")]
+		self.tasks = [Task(description: "Nothing"), Task(description: "Second one.")]
+		self.tasks[1].check = true
 	}
 	
 	func toString(shortMonth: Bool, includeDay: Bool, includeYear: Bool) -> String {
@@ -42,7 +43,7 @@ struct ToDo {
 		let date = self.date
 		let calendar = Calendar.current
 		let formatter = DateFormatter()
-		let day = calendar.component(.day, from: date)
+		// let day = calendar.component(.day, from: date)
 		
 		var inWords: String = ""
 		

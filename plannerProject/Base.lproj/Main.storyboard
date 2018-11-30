@@ -183,20 +183,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-lY-g4a">
-                                <rect key="frame" x="16" y="124" width="343" height="200"/>
+                                <rect key="frame" x="15" y="124" width="345" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">In this space, we will be able to do things such as list items we want to do, put in goals, and other items that are similar. You're seeing this text if nothing has been entered in the title field.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Thoughts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ya-Jw-Qzx">
-                                <rect key="frame" x="16" y="338" width="108" height="29"/>
+                                <rect key="frame" x="15" y="338" width="109" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Nothing here yet, boss." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uCs-zC-hnN">
-                                <rect key="frame" x="16" y="375" width="343" height="128"/>
+                                <rect key="frame" x="15" y="375" width="345" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -205,15 +205,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uHV-RQ-cjb" firstAttribute="bottom" secondItem="uCs-zC-hnN" secondAttribute="bottom" constant="115" id="AWf-ae-utX"/>
-                            <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="GFO-lY-g4a" secondAttribute="trailing" constant="16" id="J8o-ox-F3z"/>
+                            <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="GFO-lY-g4a" secondAttribute="trailing" constant="15" id="J8o-ox-F3z"/>
                             <constraint firstItem="uCs-zC-hnN" firstAttribute="top" secondItem="8Ya-Jw-Qzx" secondAttribute="bottom" constant="8" id="Yag-A1-Gjv"/>
-                            <constraint firstItem="GFO-lY-g4a" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="16" id="ZcV-ED-Bx4"/>
+                            <constraint firstItem="GFO-lY-g4a" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="15" id="ZcV-ED-Bx4"/>
                             <constraint firstItem="GFO-lY-g4a" firstAttribute="top" secondItem="uHV-RQ-cjb" secondAttribute="top" constant="8" id="bwl-b5-LjX"/>
-                            <constraint firstItem="uCs-zC-hnN" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="16" id="ca3-tZ-CFs"/>
+                            <constraint firstItem="uCs-zC-hnN" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="15" id="ca3-tZ-CFs"/>
                             <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="8Ya-Jw-Qzx" secondAttribute="trailing" constant="251" id="d8l-Om-EA2"/>
                             <constraint firstItem="8Ya-Jw-Qzx" firstAttribute="top" secondItem="GFO-lY-g4a" secondAttribute="bottom" constant="14" id="oAh-vs-1F8"/>
-                            <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="uCs-zC-hnN" secondAttribute="trailing" constant="16" id="qx4-O9-ZtX"/>
-                            <constraint firstItem="8Ya-Jw-Qzx" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="16" id="z1u-NW-WYX"/>
+                            <constraint firstItem="uHV-RQ-cjb" firstAttribute="trailing" secondItem="uCs-zC-hnN" secondAttribute="trailing" constant="15" id="qx4-O9-ZtX"/>
+                            <constraint firstItem="8Ya-Jw-Qzx" firstAttribute="leading" secondItem="uHV-RQ-cjb" secondAttribute="leading" constant="15" id="z1u-NW-WYX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uHV-RQ-cjb"/>
                     </view>
