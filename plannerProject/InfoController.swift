@@ -37,23 +37,28 @@ class InfoController: UIViewController {
 			
 			for task in thingsToDo[selected].tasks {
 				// task checkbox
-				var checkBox = UIImage(named: "check@40")
+				var checkBox = UIImage(named: "check@60")
 				if (task.check) {
-					checkBox = UIImage(named: "checkFilled@40")
+					checkBox = UIImage(named: "checkFilled@60")
 				}
 				let checkBoxImageView = UIImageView(image: checkBox)
-				checkBoxImageView.frame = CGRect(x: 20, y: yPos+10, width: 20, height: 20)
+				if (task.check) {
+					checkBoxImageView.image = checkBoxImageView.image?.withRenderingMode(.alwaysTemplate)
+					checkBoxImageView.tintColor = UIColor(red: 105/255, green: 197/255, blue: 60/255, alpha: 1.0)
+				}
+				checkBoxImageView.frame = CGRect(x: 20, y: yPos, width: 30, height: 30)
 				self.view.addSubview(checkBoxImageView)
 				checkBoxImageView.isUserInteractionEnabled = true
 				
 				// task label
-				let taskLabel = UILabel()
-				taskLabel.text = task.description
-				taskLabel.font = UIFont.systemFont(ofSize: 16)
-				taskLabel.textAlignment = .left
-				taskLabel.frame = CGRect(x: 50, y: yPos, width:250, height: 40)
-				yPos += 30
-				self.view.addSubview(taskLabel)
+				let taskField = UITextField()
+				taskField.returnKeyType = .done
+				taskField.text = task.description
+				taskField.font = UIFont.systemFont(ofSize: 16)
+				taskField.textAlignment = .left
+				taskField.frame = CGRect(x: 60, y: yPos-5, width:250, height: 40)
+				yPos += 35
+				self.view.addSubview(taskField)
 				
 				// TODO: implement some way of recognising taps and
 				//       changing the images to reflect state of task
@@ -64,5 +69,12 @@ class InfoController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		// this won't work?
 		thingsToDo[selected].thoughts = thoughtBox.text
+	}
+	
+	// without this, pressing done will not hide the keyboard
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		print("Should be closing")
+		self.view.endEditing(true)
+		return false
 	}
 }
