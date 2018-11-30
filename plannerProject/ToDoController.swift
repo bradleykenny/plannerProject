@@ -11,9 +11,14 @@ import UIKit
 var thingsToDo: [ToDo] = []
 var selected = 0
 
-struct Tasks {
+struct Task {
 	var description: String
 	var check: Bool
+	
+	init(description: String) {
+		self.description = description
+		self.check = false
+	}
 }
 
 struct ToDo {
@@ -21,14 +26,14 @@ struct ToDo {
 	var title: String
 	var todos: [String]
 	var thoughts: String
-	var tasks: [Tasks]
+	var tasks: [Task]
 	
 	init(date: Date, title: String) {
 		self.date = date
 		self.title = title
 		self.todos = []
 		self.thoughts = ""
-		self.tasks = []
+		self.tasks = [Task(description: "First one!")]
 	}
 	
 	func toString(shortMonth: Bool, includeDay: Bool, includeYear: Bool) -> String {
@@ -42,30 +47,12 @@ struct ToDo {
 		var inWords: String = ""
 		
 		if (includeDay) {
-			formatter.dateFormat = "E"
+			formatter.dateFormat = "EEEE"
 			inWords.append(formatter.string(from: date) + " ")
 		}
 		
-		var mod: Int = 10
-		if (day >= 20 && day < 30) {
-			mod = 20
-		} else if (day >= 30) {
-			mod = 30
-		}
-		
-		if (day == 11 || day == 12 || day == 13) {
-			inWords.append(String(day) + "th")
-		} else {
-			if (day % mod == 1) {
-				inWords.append(String(day) + "st")
-			} else if (day % mod == 2) {
-				inWords.append(String(day) + "nd")
-			} else if (day % mod == 3) {
-				inWords.append(String(day) + "rd")
-			} else {
-				inWords.append(String(day) + "th")
-			}
-		}
+		formatter.dateFormat = "dd"
+		inWords.append(formatter.string(from: date))
 		
 		if (shortMonth) {
 			formatter.dateFormat = "MMM"
@@ -95,10 +82,14 @@ class ToDoController: UITableViewController {
 	
 	// fills the cells with content from the array above (thingsToDo)
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cell")
+		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+		// cell.accessoryType = UITableViewCell.AccessoryType.checkmark
 		cell.textLabel?.text = thingsToDo[indexPath.row].title
 		cell.detailTextLabel?.text = thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true)
+		cell.layer.cornerRadius = 8.0
+		// cell.backgroundColor = .red
 		
+		// toDoTable.separatorColor = .gray // TODO: style this better
 		// cell.backgroundColor = UIColor.yellow
 		
 		return(cell)
