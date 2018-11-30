@@ -11,17 +11,24 @@ import UIKit
 var thingsToDo: [ToDo] = []
 var selected = 0
 
+struct Tasks {
+	var description: String
+	var check: Bool
+}
+
 struct ToDo {
 	var date: Date
 	var title: String
 	var todos: [String]
 	var thoughts: String
+	var tasks: [Tasks]
 	
 	init(date: Date, title: String) {
 		self.date = date
 		self.title = title
 		self.todos = []
 		self.thoughts = ""
+		self.tasks = []
 	}
 	
 	func toString(shortMonth: Bool, includeDay: Bool, includeYear: Bool) -> String {
