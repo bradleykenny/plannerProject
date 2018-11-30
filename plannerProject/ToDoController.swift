@@ -33,7 +33,7 @@ struct ToDo {
 		self.title = title
 		self.todos = []
 		self.thoughts = ""
-		self.tasks = [Task(description: "Nothing"), Task(description: "Second one.")]
+		self.tasks = [Task(description: "My first ever task."), Task(description: "A second task for testing.")]
 		self.tasks[1].check = true
 	}
 	
