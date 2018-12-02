@@ -59,7 +59,7 @@ class InfoController: UIViewController {
 				taskField.frame = CGRect(x: 60, y: yPos-5, width:250, height: 40)
 				yPos += 35
 				self.view.addSubview(taskField)
-				
+								
 				// TODO: implement some way of recognising taps and
 				//       changing the images to reflect state of task
 			}
