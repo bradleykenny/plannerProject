@@ -41,6 +41,14 @@ class InfoController: UIViewController {
 				if (task.check) {
 					checkBox = UIImage(named: "checkFilled@60")
 				}
+				
+				// TEST CODE
+				var something = UIButton()
+				something.frame = CGRect.init(x: 150, y: yPos, width: 30, height: 30)
+				something.setImage(checkBox, for: .normal)
+				self.view.addSubview(something)
+				// END TEST CODE
+				
 				let checkBoxImageView = UIImageView(image: checkBox)
 				if (task.check) {
 					checkBoxImageView.image = checkBoxImageView.image?.withRenderingMode(.alwaysTemplate)
@@ -59,7 +67,9 @@ class InfoController: UIViewController {
 				taskField.frame = CGRect(x: 60, y: yPos-5, width:250, height: 40)
 				yPos += 35
 				self.view.addSubview(taskField)
-								
+				
+				
+				
 				// TODO: implement some way of recognising taps and
 				//       changing the images to reflect state of task
 			}
