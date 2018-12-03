@@ -45,11 +45,6 @@ class InfoController: UIViewController {
 				let checkBtn = CheckUIButton(taskFor: task)
 				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
 				checkBtn.setImage(checkBox, for: .normal)
-				if (task.check) {
-					// maybe include colouring in final product??
-					// checkBtn.imageView?.image = checkBtn.imageView?.image?.withRenderingMode(.alwaysTemplate)
-					// checkBtn.imageView?.tintColor = UIColor(red: 105/255, green: 197/255, blue: 60/255, alpha: 1.0)
-				}
 				checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
 				self.view.addSubview(checkBtn)
 	
