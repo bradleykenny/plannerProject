@@ -42,7 +42,7 @@ class InfoController: UIViewController {
 				if (task.check) {
 					checkBox = UIImage(named: "checkFilled@60")
 				}
-				let checkBtn = CheckUIButton(taskFor: task, checkImage: checkBox!)
+				let checkBtn = CheckUIButton(taskFor: task)
 				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
 				checkBtn.setImage(checkBox, for: .normal)
 				if (task.check) {
@@ -68,12 +68,13 @@ class InfoController: UIViewController {
 	
 	@objc func changeCheck(_ sender: CheckUIButton!) {
 		sender.taskFor.check = !sender.taskFor.check
+		var checkImage: UIImage
 		if (sender.taskFor.check) {
-			sender.checkImage = UIImage(named: "checkFilled@60")!
+			checkImage = UIImage(named: "checkFilled@60")!
 		} else {
-			sender.checkImage = UIImage(named: "check@60")!
+			checkImage = UIImage(named: "check@60")!
 		}
-		sender.setImage(sender.checkImage, for: .normal)
+		sender.setImage(checkImage, for: .normal)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -93,11 +94,9 @@ class InfoController: UIViewController {
 // use this subclass, otherwise cannot access what task the checkBtn is for
 class CheckUIButton: UIButton {
 	var taskFor: Task
-	var checkImage: UIImage
 	
-	init(taskFor: Task, checkImage: UIImage) {
+	init(taskFor: Task) {
 		self.taskFor = taskFor
-		self.checkImage = checkImage
 		super.init(frame: .zero)
 	}
 	
