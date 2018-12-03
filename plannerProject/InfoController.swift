@@ -27,7 +27,7 @@ class InfoController: UIViewController {
 		}
 		
 		if (thingsToDo[selected].tasks.count > 0) {
-			var yPos = 250
+			var yPos = 250 // position tasks will be displayed at on y-axis
 			let taskTitle = UILabel()
 			taskTitle.text = "Tasks"
 			taskTitle.font = UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -63,8 +63,6 @@ class InfoController: UIViewController {
 				
 				// TODO: implement some way of recognising taps and
 				//       changing the images to reflect state of task
-				
-				
 			}
  		}
     }
@@ -76,6 +74,7 @@ class InfoController: UIViewController {
 	
 	// without this, pressing done will not hide the keyboard
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		// TODO: test if this works, don't think it does
 		print("Should be closing")
 		self.view.endEditing(true)
 		return false
