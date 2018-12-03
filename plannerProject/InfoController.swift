@@ -41,22 +41,10 @@ class InfoController: UIViewController {
 				if (task.check) {
 					checkBox = UIImage(named: "checkFilled@60")
 				}
-				
-				// TEST CODE
-				var something = UIButton()
-				something.frame = CGRect.init(x: 150, y: yPos, width: 30, height: 30)
-				something.setImage(checkBox, for: .normal)
-				self.view.addSubview(something)
-				// END TEST CODE
-				
-				let checkBoxImageView = UIImageView(image: checkBox)
-				if (task.check) {
-					checkBoxImageView.image = checkBoxImageView.image?.withRenderingMode(.alwaysTemplate)
-					checkBoxImageView.tintColor = UIColor(red: 105/255, green: 197/255, blue: 60/255, alpha: 1.0)
-				}
-				checkBoxImageView.frame = CGRect(x: 20, y: yPos, width: 30, height: 30)
-				self.view.addSubview(checkBoxImageView)
-				checkBoxImageView.isUserInteractionEnabled = true
+				let checkBtn = UIButton()
+				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
+				checkBtn.setImage(checkBox, for: .normal)
+				self.view.addSubview(checkBtn)
 				
 				// task label
 				let taskField = UITextField()
