@@ -32,8 +32,9 @@ class InfoController: UIViewController {
 			taskTitle.text = "Tasks"
 			taskTitle.font = UIFont.systemFont(ofSize: 24, weight: .bold)
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
-			yPos += 40
 			self.view.addSubview(taskTitle)
+			
+			yPos += 50
 			
 			for task in thingsToDo[selected].tasks {
 				// task checkbox
@@ -44,6 +45,10 @@ class InfoController: UIViewController {
 				let checkBtn = UIButton()
 				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
 				checkBtn.setImage(checkBox, for: .normal)
+				if (task.check) {
+					checkBtn.imageView?.image = checkBtn.imageView?.image?.withRenderingMode(.alwaysTemplate)
+					checkBtn.imageView?.tintColor = UIColor(red: 105/255, green: 197/255, blue: 60/255, alpha: 1.0)
+				}
 				self.view.addSubview(checkBtn)
 				
 				// task label
@@ -56,10 +61,10 @@ class InfoController: UIViewController {
 				yPos += 35
 				self.view.addSubview(taskField)
 				
-				
-				
 				// TODO: implement some way of recognising taps and
 				//       changing the images to reflect state of task
+				
+				
 			}
  		}
     }
