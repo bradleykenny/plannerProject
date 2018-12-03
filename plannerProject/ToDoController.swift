@@ -52,7 +52,7 @@ struct ToDo {
 			inWords.append(formatter.string(from: date) + " ")
 		}
 		
-		formatter.dateFormat = "dd"
+		formatter.dateFormat = "d"
 		inWords.append(formatter.string(from: date))
 		
 		if (shortMonth) {
