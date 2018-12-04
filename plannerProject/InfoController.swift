@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class InfoController: UIViewController, UITextFieldDelegate {
 
@@ -59,6 +60,14 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				yPos += 35
 				self.view.addSubview(taskField)
 			}
+			yPos += 20 // padding between tasks and next item
+			
+			// MAPS
+			let map = MKMapView()
+			map.frame = CGRect(x: 0, y: yPos, width: Int(UIScreen.main.bounds.width), height: 400)
+			map.setCenter(CLLocationCoordinate2D(latitude: -33.63, longitude: 150.66), animated: true)
+			map.showsUserLocation = true
+			self.view.addSubview(map)
  		}
     }
 	

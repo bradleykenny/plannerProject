@@ -154,7 +154,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do" id="MNN-e3-bqa">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="60T-KN-kjd">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="60T-KN-kjd">
                             <connections>
                                 <action selector="editMode:" destination="Xkc-5E-1Kl" id="ZDs-zz-98d"/>
                             </connections>
