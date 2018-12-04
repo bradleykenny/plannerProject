@@ -41,9 +41,7 @@ struct ToDo {
 		// Return the date var in the form of DDth MM, YYYY.
 		// For example, 28th March, 1998.
 		let date = self.date
-		let calendar = Calendar.current
 		let formatter = DateFormatter()
-		// let day = calendar.component(.day, from: date)
 		
 		var inWords: String = ""
 		
