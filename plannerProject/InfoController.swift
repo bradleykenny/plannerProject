@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoController: UIViewController {
+class InfoController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var descriptionBox: UITextView!
 	@IBOutlet weak var thoughtBox: UITextView!
@@ -55,6 +55,7 @@ class InfoController: UIViewController {
 				taskField.font = UIFont.systemFont(ofSize: 16)
 				taskField.textAlignment = .left
 				taskField.frame = CGRect(x: 60, y: yPos-5, width:250, height: 40)
+				taskField.delegate = self
 				yPos += 35
 				self.view.addSubview(taskField)
 			}
@@ -62,7 +63,7 @@ class InfoController: UIViewController {
     }
 	
 	@objc func changeCheck(_ sender: CheckUIButton!) {
-		sender.taskFor.check = !sender.taskFor.check
+		sender.taskFor.check.toggle()
 		var checkImage: UIImage
 		if (sender.taskFor.check) {
 			checkImage = UIImage(named: "checkFilled@60")!
@@ -79,8 +80,6 @@ class InfoController: UIViewController {
 	
 	// without this, pressing done will not hide the keyboard
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		// TODO: test if this works, don't think it does
-		print("Should be closing")
 		self.view.endEditing(true)
 		return false
 	}
