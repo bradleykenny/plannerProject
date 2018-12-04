@@ -82,14 +82,11 @@ class ToDoController: UITableViewController {
 	// fills the cells with content from the array above (thingsToDo)
 	public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-		// cell.accessoryType = UITableViewCell.AccessoryType.checkmark
 		cell.textLabel?.text = thingsToDo[indexPath.row].title
 		cell.detailTextLabel?.text = thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true)
 		cell.layer.cornerRadius = 8.0
-		// cell.backgroundColor = .red
 		
 		// toDoTable.separatorColor = .gray // TODO: style this better
-		// cell.backgroundColor = UIColor.yellow
 		
 		return(cell)
 	}
@@ -98,8 +95,7 @@ class ToDoController: UITableViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		navigationController?.navigationBar.prefersLargeTitles = true
-		// navigationController?.navigationBar.backgroundColor = UIColor.blue
-		// navigationController?.navigationBar.barTintColor = UIColor.green
+		// navigationController?.navigationBar.barTintColor = UIColor.white
 		self.title = "Agenda" // sets title of tab
 		editButton.title = "Edit"
 		
