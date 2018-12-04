@@ -21,32 +21,30 @@ class addController: UIViewController, UITextFieldDelegate {
 		super.viewDidLoad()
 		
 		self.title = "New Plan"
+		
+		let color = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
 
-		// do any additional setup after loading the view
 		input1.borderStyle = UITextField.BorderStyle.none
-
+		
 		// indents text in textfield
 		let spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:0))
 		input1.leftViewMode = UITextField.ViewMode.always
 		input1.leftView = spacerView
 		self.input1.delegate = self
 
-		// view.backgroundColor = UIColor.darkGray
-		// addButton.tintColor = nil
-		// addButton.layer.cornerRadius = 8
+		// change background color in here
+		addButton.backgroundColor = color
 		addButton.setTitleColor(UIColor.white, for: .normal)
+		
+		// add date button
+		formatter.dateFormat = "E dd MMMM, yyyy"
+		showDateButton.setTitle(formatter.string(from: datePicker.date), for: .normal)
+		showDateButton.layer.cornerRadius = 5.0
+		showDateButton.layer.backgroundColor = color.cgColor
 		
 		// datePicker set-up
 		datePicker?.datePickerMode = UIDatePicker.Mode.date
 		datePicker.isHidden = true
-	
-		formatter.dateFormat = "E dd MMMM, yyyy"
-		
-		showDateButton.setTitle(formatter.string(from: datePicker.date), for: .normal)
-		showDateButton.layer.cornerRadius = 5.0
-		// let color = UIColor(red: 0, green: 122, blue: 255, alpha: 1)
-		// showDateButton.layer.backgroundColor = color.cgColor
-		// showDateButton.tintColor = UIColor.clear
     }
 	
 	@IBAction func addToArray(_ sender: Any) {
