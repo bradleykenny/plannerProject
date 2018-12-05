@@ -32,7 +32,7 @@ struct ToDo {
 		self.date = date
 		self.title = title
 		self.todos = []
-		self.thoughts = ""
+		self.thoughts = "Just some thought text. This could go on and on and on and on and on and on and on."
 		self.tasks = [Task(description: "My first ever task."), Task(description: "A second task for testing.")]
 		self.tasks[1].check = true
 	}
@@ -98,6 +98,7 @@ class ToDoController: UITableViewController {
 		// navigationController?.navigationBar.barTintColor = UIColor.white
 		self.title = "Agenda" // sets title of tab
 		editButton.title = "Edit"
+
 		
 		/*** BEGIN TEST DATA ***/
 		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()), title: "Day 1")

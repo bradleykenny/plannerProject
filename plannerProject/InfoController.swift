@@ -20,18 +20,26 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		self.title = thingsToDo[selected].toString(shortMonth: false, includeDay: false, includeYear: false)
 		
-		descriptionBox.isEditable = false
-		thoughtBox.isEditable = false
-	
-		if (thingsToDo[selected].title != "") {
-			descriptionBox.text = thingsToDo[selected].title
-		}
+		var yPos = 150 // position tasks will be displayed at on y-axis
+		
+		let thoughtTitle = UILabel()
+		thoughtTitle.text = "Thoughts"
+		thoughtTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+		thoughtTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
+		self.view.addSubview(thoughtTitle)
+		yPos += 40
+		
+		let thoughtText = UITextView()
+		thoughtText.text = thingsToDo[selected].thoughts
+		thoughtText.font = UIFont.systemFont(ofSize: 17)
+		thoughtText.frame = CGRect(x: 15, y: yPos, width: Int(UIScreen.main.bounds.width)-20, height: 150)
+		self.view.addSubview(thoughtText)
+		yPos += 70
 		
 		if (thingsToDo[selected].tasks.count > 0) {
-			var yPos = 250 // position tasks will be displayed at on y-axis
 			let taskTitle = UILabel()
 			taskTitle.text = "Tasks"
-			taskTitle.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+			taskTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
 			self.view.addSubview(taskTitle)
 			
@@ -43,17 +51,17 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				if (task.check) {
 					checkBox = UIImage(named: "checkFilled@60")
 				}
-				let checkBtn = CheckUIButton(taskFor: task)
+				let checkBtn = CheckUIButton(belongsTo: task)
 				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
 				checkBtn.setImage(checkBox, for: .normal)
 				checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
 				self.view.addSubview(checkBtn)
 	
 				// task label
-				let taskField = UITextField()
+				let taskField = UITextField() // should disable editing
 				taskField.returnKeyType = .done
 				taskField.text = task.description
-				taskField.font = UIFont.systemFont(ofSize: 16)
+				taskField.font = UIFont.systemFont(ofSize: 17)
 				taskField.textAlignment = .left
 				taskField.frame = CGRect(x: 60, y: yPos-5, width:250, height: 40)
 				taskField.delegate = self
@@ -72,9 +80,9 @@ class InfoController: UIViewController, UITextFieldDelegate {
     }
 	
 	@objc func changeCheck(_ sender: CheckUIButton!) {
-		sender.taskFor.check.toggle()
+		sender.belongsTo.check.toggle()
 		var checkImage: UIImage
-		if (sender.taskFor.check) {
+		if (sender.belongsTo.check) {
 			checkImage = UIImage(named: "checkFilled@60")!
 		} else {
 			checkImage = UIImage(named: "check@60")!
@@ -83,8 +91,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
-		// this won't work?
-		thingsToDo[selected].thoughts = thoughtBox.text
+		// nothing here yet
 	}
 	
 	// without this, pressing done will not hide the keyboard
@@ -96,10 +103,10 @@ class InfoController: UIViewController, UITextFieldDelegate {
 
 // use this subclass, otherwise cannot access what task the checkBtn is for
 class CheckUIButton: UIButton {
-	var taskFor: Task
+	var belongsTo: Task
 	
-	init(taskFor: Task) {
-		self.taskFor = taskFor
+	init(belongsTo: Task) {
+		self.belongsTo = belongsTo
 		super.init(frame: .zero)
 	}
 	
