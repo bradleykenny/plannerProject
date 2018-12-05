@@ -61,6 +61,11 @@ class addController: UIViewController, UITextFieldDelegate {
 				self.present(alert, animated: true)
 				
 			}
+		} else {
+			// maybe remove this?
+			let alert = UIAlertController(title: "No title!", message: "You have not given a title yet.", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+			self.present(alert, animated: true)
 		}
 	}
 	

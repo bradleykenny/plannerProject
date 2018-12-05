@@ -76,7 +76,9 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			map.setCenter(CLLocationCoordinate2D(latitude: -33.63, longitude: 150.66), animated: true)
 			map.showsUserLocation = true
 			self.view.addSubview(map)
- 		}
+		} else {
+			// insert empty check box that we can add a task to
+		}
     }
 	
 	@objc func changeCheck(_ sender: CheckUIButton!) {
