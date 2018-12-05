@@ -90,10 +90,6 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		sender.setImage(checkImage, for: .normal)
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		// nothing here yet
-	}
-	
 	// without this, pressing done will not hide the keyboard
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		self.view.endEditing(true)
