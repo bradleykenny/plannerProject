@@ -43,13 +43,21 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			taskTitle.text = "Tasks"
 			taskTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
+			taskTitle.backgroundColor = .clear
 			self.view.addSubview(taskTitle)
+			
+			let addTask = UIButton()
+			addTask.setTitle("+", for: .normal)
+			addTask.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+			addTask.setTitleColor(.blue, for: .normal)
+			addTask.frame = CGRect(x: -5, y: yPos-2, width:250, height: 40)
+			self.view.addSubview(addTask)
 			
 			yPos += 50
 			
 			for task in thingsToDo[selected].tasks {
 				// task checkbox
-				var checkBox = UIImage(named: "check@60")
+				var checkBox = UIImage(named: "circle@60")
 				if (task.check) {
 					checkBox = UIImage(named: "checkFilled@60")
 				}
@@ -77,7 +85,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			map.frame = CGRect(x: 0, y: yPos, width: Int(UIScreen.main.bounds.width), height: 400)
 			map.setCenter(CLLocationCoordinate2D(latitude: -33.63, longitude: 150.66), animated: true)
 			map.showsUserLocation = true
-			self.view.addSubview(map)
+			// self.view.addSubview(map)
 		} else {
 			// insert empty check box that we can add a task to
 		}
@@ -89,7 +97,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		if (sender.belongsTo.check) {
 			checkImage = UIImage(named: "checkFilled@60")!
 		} else {
-			checkImage = UIImage(named: "check@60")!
+			checkImage = UIImage(named: "circle@60")!
 		}
 		sender.setImage(checkImage, for: .normal)
 	}
