@@ -32,9 +32,11 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		let thoughtText = UITextView()
 		thoughtText.text = thingsToDo[selected].thoughts
 		thoughtText.font = UIFont.systemFont(ofSize: 17)
-		thoughtText.frame = CGRect(x: 15, y: yPos, width: Int(UIScreen.main.bounds.width)-20, height: 150)
+		// want to make this a constraint; not a static height
+		thoughtText.frame = CGRect(x: 15, y: yPos, width: Int(UIScreen.main.bounds.width)-30, height: 150)
+		thoughtText.textAlignment = .justified
 		self.view.addSubview(thoughtText)
-		yPos += 70
+		yPos += Int(thoughtText.frame.height) - 40
 		
 		if (thingsToDo[selected].tasks.count > 0) {
 			let taskTitle = UILabel()
