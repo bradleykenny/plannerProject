@@ -20,13 +20,16 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		self.title = thingsToDo[selected].toString(shortMonth: false, includeDay: false, includeYear: false)
 		
-		var yPos = 150 // position tasks will be displayed at on y-axis
+		let scrollView = UIScrollView(frame: self.view.bounds)
+		scrollView.contentSize = self.view.bounds.size
+		
+		var yPos = 20 // position tasks will be displayed at on y-axis
 		
 		let thoughtTitle = UILabel()
 		thoughtTitle.text = "Thoughts"
 		thoughtTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 		thoughtTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
-		self.view.addSubview(thoughtTitle)
+		scrollView.addSubview(thoughtTitle)
 		yPos += 40
 		
 		let thoughtText = UITextView()
@@ -35,7 +38,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		// want to make this a constraint; not a static height
 		thoughtText.frame = CGRect(x: 15, y: yPos, width: Int(UIScreen.main.bounds.width)-30, height: 150)
 		thoughtText.textAlignment = .justified
-		self.view.addSubview(thoughtText)
+		scrollView.addSubview(thoughtText)
 		yPos += Int(thoughtText.frame.height) - 40
 		
 		if (thingsToDo[selected].tasks.count > 0) {
@@ -44,14 +47,15 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			taskTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
 			taskTitle.backgroundColor = .clear
-			self.view.addSubview(taskTitle)
+			scrollView.addSubview(taskTitle)
 			
 			let addTask = UIButton()
 			addTask.setTitle("+", for: .normal)
 			addTask.titleLabel?.font = UIFont.systemFont(ofSize: 36)
-			addTask.setTitleColor(.blue, for: .normal)
-			addTask.frame = CGRect(x: -5, y: yPos-2, width:250, height: 40)
-			self.view.addSubview(addTask)
+			addTask.setTitleColor(.black, for: .normal)
+			addTask.setTitleColor(.gray, for: .highlighted)
+			addTask.frame = CGRect(x: -10, y: yPos-3, width:250, height: 40)
+			scrollView.addSubview(addTask)
 			
 			yPos += 50
 			
@@ -65,7 +69,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
 				checkBtn.setImage(checkBox, for: .normal)
 				checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
-				self.view.addSubview(checkBtn)
+				scrollView.addSubview(checkBtn)
 	
 				// task label
 				let taskField = UITextField() // should disable editing
@@ -76,7 +80,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				taskField.frame = CGRect(x: 60, y: yPos-5, width:250, height: 40)
 				taskField.delegate = self
 				yPos += 35
-				self.view.addSubview(taskField)
+				scrollView.addSubview(taskField)
 			}
 			yPos += 20 // padding between tasks and next item
 			
@@ -85,7 +89,8 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			map.frame = CGRect(x: 0, y: yPos, width: Int(UIScreen.main.bounds.width), height: 400)
 			map.setCenter(CLLocationCoordinate2D(latitude: -33.63, longitude: 150.66), animated: true)
 			map.showsUserLocation = true
-			// self.view.addSubview(map)
+			scrollView.addSubview(map)
+			self.view.addSubview(scrollView)
 		} else {
 			// insert empty check box that we can add a task to
 		}
