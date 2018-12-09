@@ -10,9 +10,6 @@ import UIKit
 import MapKit
 
 class InfoController: UIViewController, UITextFieldDelegate {
-
-	@IBOutlet weak var descriptionBox: UITextView!
-	@IBOutlet weak var thoughtBox: UITextView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -89,7 +86,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			map.frame = CGRect(x: 0, y: yPos, width: Int(UIScreen.main.bounds.width), height: 400)
 			map.setCenter(CLLocationCoordinate2D(latitude: -33.63, longitude: 150.66), animated: true)
 			map.showsUserLocation = true
-			scrollView.addSubview(map)
+			// scrollView.addSubview(map)
 			self.view.addSubview(scrollView)
 		} else {
 			// insert empty check box that we can add a task to
