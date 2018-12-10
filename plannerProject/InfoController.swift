@@ -19,8 +19,12 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		
 		let scrollView = UIScrollView(frame: self.view.bounds)
 		scrollView.contentSize = self.view.bounds.size
+		scrollView.contentSize.height = self.view.bounds.size.height
 		
 		var yPos = 20 // position tasks will be displayed at on y-axis
+		
+		thingsToDo[selected].tasks = addToDo(item: Task(description: "Added using the function."), TaskSet: thingsToDo[selected].tasks)
+		thingsToDo[selected].tasks = addToDo(item: Task(description: "Another one added using the functiion."), TaskSet: thingsToDo[selected].tasks)
 		
 		let thoughtTitle = UILabel()
 		thoughtTitle.text = "Thoughts"
@@ -43,7 +47,6 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			taskTitle.text = "Tasks"
 			taskTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
-			taskTitle.backgroundColor = .clear
 			scrollView.addSubview(taskTitle)
 			
 			let addTask = UIButton()
@@ -74,7 +77,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				taskField.text = task.description
 				taskField.font = UIFont.systemFont(ofSize: 17)
 				taskField.textAlignment = .left
-				taskField.frame = CGRect(x: 60, y: yPos-5, width:250, height: 40)
+				taskField.frame = CGRect(x: 60, y: yPos-5, width: 280, height: 40)
 				taskField.delegate = self
 				yPos += 35
 				scrollView.addSubview(taskField)
@@ -108,6 +111,12 @@ class InfoController: UIViewController, UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		self.view.endEditing(true)
 		return false
+	}
+	
+	func addToDo(item: Task, TaskSet: [Task]) -> [Task] {
+		var TaskSet = TaskSet
+		TaskSet.append(item)
+		return TaskSet
 	}
 }
 
