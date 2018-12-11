@@ -49,6 +49,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
 			scrollView.addSubview(taskTitle)
 			
+			/*
 			let addTask = UIButton()
 			addTask.setTitle("+", for: .normal)
 			addTask.titleLabel?.font = UIFont.systemFont(ofSize: 36)
@@ -56,6 +57,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			addTask.setTitleColor(.gray, for: .highlighted)
 			addTask.frame = CGRect(x: -10, y: yPos-3, width:250, height: 40)
 			scrollView.addSubview(addTask)
+			*/
 			
 			yPos += 50
 			
