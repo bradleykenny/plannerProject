@@ -98,7 +98,6 @@ class ToDoController: UITableViewController {
 		// navigationController?.navigationBar.barTintColor = UIColor.white
 		self.title = "Agenda" // sets title of tab
 		editButton.title = "Edit"
-
 		
 		/*** BEGIN TEST DATA ***/
 		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()), title: "Strawberry")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C7248C921BF9EA3003E8E27 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7248C821BF9EA3003E8E27 /* CalendarCell.swift */; };
 		1C9686DD21ABC9830039390B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9686DC21ABC9830039390B /* AppDelegate.swift */; };
 		1C9686DF21ABC9830039390B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9686DE21ABC9830039390B /* ViewController.swift */; };
 		1C9686E221ABC9830039390B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C9686E021ABC9830039390B /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C7248C821BF9EA3003E8E27 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		1C9686D921ABC9830039390B /* plannerProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plannerProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9686DC21ABC9830039390B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C9686DE21ABC9830039390B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				1C9686DC21ABC9830039390B /* AppDelegate.swift */,
 				1C9686F021ABD4B40039390B /* ToDoController.swift */,
+				1C7248C821BF9EA3003E8E27 /* CalendarCell.swift */,
 				1C9686F421ABEF460039390B /* AddController.swift */,
 				1C9686F221ABE2780039390B /* InfoController.swift */,
 				1C9686DE21ABC9830039390B /* ViewController.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C9686DF21ABC9830039390B /* ViewController.swift in Sources */,
+				1C7248C921BF9EA3003E8E27 /* CalendarCell.swift in Sources */,
 				1C9686F521ABEF460039390B /* AddController.swift in Sources */,
 				1C9686DD21ABC9830039390B /* AppDelegate.swift in Sources */,
 				1C9686F121ABD4B40039390B /* ToDoController.swift in Sources */,
