@@ -27,7 +27,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		thingsToDo[selected].tasks = addToDo(item: Task(description: "Another one added using the functiion."), TaskSet: thingsToDo[selected].tasks)
 		
 		let thoughtTitle = UILabel()
-		thoughtTitle.text = "Thoughts"
+		thoughtTitle.text = "Notes"
 		thoughtTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 		thoughtTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
 		scrollView.addSubview(thoughtTitle)
@@ -38,7 +38,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		thoughtText.font = UIFont.systemFont(ofSize: 17)
 		// want to make this a constraint; not a static height
 		thoughtText.frame = CGRect(x: 15, y: yPos, width: Int(UIScreen.main.bounds.width)-30, height: 150)
-		thoughtText.textAlignment = .justified
+		thoughtText.textAlignment = .left
 		scrollView.addSubview(thoughtText)
 		yPos += Int(thoughtText.frame.height) - 40
 		
@@ -48,17 +48,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			taskTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
 			scrollView.addSubview(taskTitle)
-			
-			/*
-			let addTask = UIButton()
-			addTask.setTitle("+", for: .normal)
-			addTask.titleLabel?.font = UIFont.systemFont(ofSize: 36)
-			addTask.setTitleColor(.black, for: .normal)
-			addTask.setTitleColor(.gray, for: .highlighted)
-			addTask.frame = CGRect(x: -10, y: yPos-3, width:250, height: 40)
-			scrollView.addSubview(addTask)
-			*/
-			
+						
 			yPos += 50
 			
 			for task in thingsToDo[selected].tasks {
@@ -84,6 +74,18 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				yPos += 35
 				scrollView.addSubview(taskField)
 			}
+			
+			let newTask = UITextField() // should disable editing
+			newTask.returnKeyType = .done
+			newTask.text = "New task..."
+			newTask.font = UIFont.systemFont(ofSize: 17)
+			newTask.textColor = UIColor.gray
+			newTask.textAlignment = .left
+			newTask.frame = CGRect(x: 60, y: yPos-5, width: 280, height: 40)
+			newTask.delegate = self
+			yPos += 35
+			scrollView.addSubview(newTask)
+			
 			yPos += 20 // padding between tasks and next item
 			
 			// MAPS
