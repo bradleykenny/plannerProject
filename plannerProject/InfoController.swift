@@ -48,7 +48,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			taskTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
 			taskTitle.frame = CGRect(x: 15, y: yPos, width:250, height: 40)
 			scrollView.addSubview(taskTitle)
-						
+			
 			yPos += 50
 			
 			for task in thingsToDo[selected].tasks {
@@ -77,9 +77,9 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			
 			let newTask = UITextField() // should disable editing
 			newTask.returnKeyType = .done
-			newTask.text = "New task..."
+			newTask.placeholder = "New task..."
 			newTask.font = UIFont.systemFont(ofSize: 17)
-			newTask.textColor = UIColor.gray
+			newTask.textColor = UIColor.black
 			newTask.textAlignment = .left
 			newTask.frame = CGRect(x: 60, y: yPos-5, width: 280, height: 40)
 			newTask.delegate = self
