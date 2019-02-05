@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+let bodyFontSize = CGFloat(15)
+
 class InfoController: UIViewController, UITextFieldDelegate {
 	
 	override func viewDidLoad() {
@@ -24,7 +26,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		var yPos = 20 // position tasks will be displayed at on y-axis
 		
 		thingsToDo[selected].tasks = addToDo(item: Task(description: "Added using the function."), TaskSet: thingsToDo[selected].tasks)
-		thingsToDo[selected].tasks = addToDo(item: Task(description: "Another one added using the functiion."), TaskSet: thingsToDo[selected].tasks)
+		thingsToDo[selected].tasks = addToDo(item: Task(description: "Another one added using the function."), TaskSet: thingsToDo[selected].tasks)
 		
 		let thoughtTitle = UILabel()
 		thoughtTitle.text = "Notes"
@@ -35,9 +37,9 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		
 		let thoughtText = UITextView()
 		thoughtText.text = thingsToDo[selected].thoughts
-		thoughtText.font = UIFont.systemFont(ofSize: 17)
+		thoughtText.font = UIFont.systemFont(ofSize: 15)
 		// want to make this a constraint; not a static height
-		thoughtText.frame = CGRect(x: 15, y: yPos, width: Int(UIScreen.main.bounds.width)-30, height: 150)
+		thoughtText.frame = CGRect(x: 12, y: yPos, width: Int(UIScreen.main.bounds.width)-30, height: 150)
 		thoughtText.textAlignment = .left
 		scrollView.addSubview(thoughtText)
 		yPos += Int(thoughtText.frame.height) - 40
@@ -51,38 +53,18 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			
 			yPos += 50
 			
-			for task in thingsToDo[selected].tasks {
-				// task checkbox
-				var checkBox = UIImage(named: "circle@60")
-				if (task.check) {
-					checkBox = UIImage(named: "checkFilled@60")
-				}
-				let checkBtn = CheckUIButton(belongsTo: task)
-				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
-				checkBtn.setImage(checkBox, for: .normal)
-				checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
-				scrollView.addSubview(checkBtn)
-	
-				// task label
-				let taskField = UITextField() // should disable editing
-				taskField.returnKeyType = .done
-				taskField.text = task.description
-				taskField.font = UIFont.systemFont(ofSize: 17)
-				taskField.textAlignment = .left
-				taskField.frame = CGRect(x: 60, y: yPos-5, width: 280, height: 40)
-				taskField.delegate = self
-				yPos += 35
-				scrollView.addSubview(taskField)
-			}
+			yPos = showTasks(tasks: thingsToDo[selected].tasks, yPos: yPos, view: scrollView)
 			
+			// TODO: fix this... should be cleaner
 			let newTask = UITextField() // should disable editing
 			newTask.returnKeyType = .done
 			newTask.placeholder = "New task..."
-			newTask.font = UIFont.systemFont(ofSize: 17)
+			newTask.font = UIFont.systemFont(ofSize: bodyFontSize)
 			newTask.textColor = UIColor.black
 			newTask.textAlignment = .left
 			newTask.frame = CGRect(x: 60, y: yPos-5, width: 280, height: 40)
-			newTask.delegate = self
+			// newTask.delegate = self
+			newTask.addTarget(self, action: #selector(self.addNewItem(_:)), for: .touchUpInside)
 			yPos += 35
 			scrollView.addSubview(newTask)
 			
@@ -111,6 +93,11 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		sender.setImage(checkImage, for: .normal)
 	}
 	
+	@objc func addNewItem(_ sender: CheckUIButton!) {
+		sender.belongsTo.check = false
+		print("PRESSED!!!!")
+	}
+	
 	// without this, pressing done will not hide the keyboard
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		self.view.endEditing(true)
@@ -121,6 +108,36 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		var TaskSet = TaskSet
 		TaskSet.append(item)
 		return TaskSet
+	}
+	
+	func showTasks(tasks: [Task], yPos: Int, view: UIScrollView) -> Int {
+		var yPos = yPos
+		let scrollView = view
+		for task in tasks {
+			// task checkbox
+			var checkBox = UIImage(named: "circle@60")
+			if (task.check) {
+				checkBox = UIImage(named: "checkFilled@60")
+			}
+			let checkBtn = CheckUIButton(belongsTo: task)
+			checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
+			checkBtn.setImage(checkBox, for: .normal)
+			checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
+			scrollView.addSubview(checkBtn)
+			
+			// task label
+			let taskField = UITextView() // should disable editing
+			taskField.returnKeyType = .done
+			taskField.text = task.description
+			taskField.font = UIFont.systemFont(ofSize: bodyFontSize)
+			taskField.textAlignment = .left
+			taskField.frame = CGRect(x: 60, y: yPos-3, width: 280, height: 40)
+			taskField.sizeToFit()
+			taskField.isScrollEnabled = false
+			yPos += Int(taskField.frame.height)
+			scrollView.addSubview(taskField)
+		}
+		return yPos
 	}
 }
 
