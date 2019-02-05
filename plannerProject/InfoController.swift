@@ -75,18 +75,23 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				scrollView.addSubview(taskField)
 			}
 			
-			// TODO: fix this... should be cleaner
-			let newTask = UITextField() // should disable editing
-			newTask.returnKeyType = .done
-			newTask.placeholder = "New task..."
-			newTask.font = UIFont.systemFont(ofSize: bodyFontSize)
-			newTask.textColor = UIColor.black
-			newTask.textAlignment = .left
-			newTask.frame = CGRect(x: 60, y: yPos-5, width: 280, height: 40)
-			// newTask.delegate = self
-			newTask.addTarget(self, action: #selector(self.addNewItem(_:)), for: .touchUpInside)
-			yPos += 35
-			scrollView.addSubview(newTask)
+			var newTask = Task(description: "")
+			let newTaskField = UITextField() // should disable editing
+			newTaskField.returnKeyType = .done
+			newTaskField.placeholder = "New task..."
+			newTaskField.font = UIFont.systemFont(ofSize: bodyFontSize)
+			newTaskField.textColor = UIColor.black
+			newTaskField.textAlignment = .left
+			newTaskField.frame = CGRect(x: 65, y: yPos-5, width: 280, height: 40)
+			// newTaskField.addTarget(self, action: #selector(self.addNewItem(_:)), for: .touchUpInside)
+			// cannot do the above, need to find a roundabout way
+			scrollView.addSubview(newTaskField)
+			
+			let checkBtn = CheckUIButton(belongsTo: newTask)
+			checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
+			checkBtn.setImage(UIImage(named: "circle@60"), for: .normal)
+			checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
+			scrollView.addSubview(checkBtn)
 			
 			yPos += 20 // padding between tasks and next item
 			
@@ -113,9 +118,10 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		sender.setImage(checkImage, for: .normal)
 	}
 	
-	@objc func addNewItem(_ sender: CheckUIButton!) {
-		sender.belongsTo.check = false
+	@objc func addNewItem(_ sender: UITextField!) {
+		// sender.belongsTo.check = false
 		print("PRESSED!!!!")
+		sender.backgroundColor = .blue
 	}
 	
 	// without this, pressing done will not hide the keyboard
