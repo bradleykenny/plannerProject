@@ -53,7 +53,30 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			
 			yPos += 50
 			
-			yPos = showTasks(tasks: thingsToDo[selected].tasks, yPos: yPos, view: scrollView)
+			for task in thingsToDo[selected].tasks {
+				// task checkbox
+				var checkBox = UIImage(named: "circle@60")
+				if (task.check) {
+					checkBox = UIImage(named: "checkFilled@60")
+				}
+				let checkBtn = CheckUIButton(belongsTo: task)
+				checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
+				checkBtn.setImage(checkBox, for: .normal)
+				checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
+				scrollView.addSubview(checkBtn)
+	
+				// task label
+				let taskField = UITextView() // should disable editing
+				taskField.returnKeyType = .done
+				taskField.text = task.description
+				taskField.font = UIFont.systemFont(ofSize: bodyFontSize)
+				taskField.textAlignment = .left
+				taskField.frame = CGRect(x: 60, y: yPos-3, width: 280, height: 40)
+				taskField.sizeToFit()
+				taskField.isScrollEnabled = false
+				yPos += Int(taskField.frame.height)
+				scrollView.addSubview(taskField)
+			}
 			
 			// TODO: fix this... should be cleaner
 			let newTask = UITextField() // should disable editing
@@ -110,34 +133,8 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		return TaskSet
 	}
 	
-	func showTasks(tasks: [Task], yPos: Int, view: UIScrollView) -> Int {
-		var yPos = yPos
-		let scrollView = view
-		for task in tasks {
-			// task checkbox
-			var checkBox = UIImage(named: "circle@60")
-			if (task.check) {
-				checkBox = UIImage(named: "checkFilled@60")
-			}
-			let checkBtn = CheckUIButton(belongsTo: task)
-			checkBtn.frame = CGRect.init(x: 20, y: yPos, width: 30, height: 30)
-			checkBtn.setImage(checkBox, for: .normal)
-			checkBtn.addTarget(self, action: #selector(self.changeCheck(_:)), for: .touchUpInside)
-			scrollView.addSubview(checkBtn)
-			
-			// task label
-			let taskField = UITextView() // should disable editing
-			taskField.returnKeyType = .done
-			taskField.text = task.description
-			taskField.font = UIFont.systemFont(ofSize: bodyFontSize)
-			taskField.textAlignment = .left
-			taskField.frame = CGRect(x: 60, y: yPos-3, width: 280, height: 40)
-			taskField.sizeToFit()
-			taskField.isScrollEnabled = false
-			yPos += Int(taskField.frame.height)
-			scrollView.addSubview(taskField)
-		}
-		return yPos
+	func showTasks(tasks: [Task], yPos: Int) {
+		
 	}
 }
 
