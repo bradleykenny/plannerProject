@@ -25,9 +25,6 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		
 		var yPos = 20 // position tasks will be displayed at on y-axis
 		
-		thingsToDo[selected].tasks = addToDo(item: Task(description: "Added using the function."), TaskSet: thingsToDo[selected].tasks)
-		thingsToDo[selected].tasks = addToDo(item: Task(description: "Another one added using the function."), TaskSet: thingsToDo[selected].tasks)
-		
 		let thoughtTitle = UILabel()
 		thoughtTitle.text = "Notes"
 		thoughtTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
