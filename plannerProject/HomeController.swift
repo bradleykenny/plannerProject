@@ -10,10 +10,16 @@ import UIKit
 
 class HomeController: UITableViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var cardThing: UIView!
+	@IBOutlet weak var cardButton: UIButton!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
 		navigationController?.navigationBar.prefersLargeTitles = true
 		self.title = "Home" // sets title of tab
+		
+		print(thingsToDo)
+		
     }
 }
