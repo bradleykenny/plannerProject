@@ -96,7 +96,7 @@ class ToDoController: UITableViewController {
         super.viewDidLoad()
 		navigationController?.navigationBar.prefersLargeTitles = true
 		// navigationController?.navigationBar.barTintColor = UIColor.white
-		self.title = "Agenda" // sets title of tab
+		self.title = "My Things" // sets title of tab
 		editButton.title = "Edit"
 		
 		/*** BEGIN TEST DATA ***/

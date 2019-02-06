@@ -83,7 +83,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 			newTaskField.textColor = UIColor.black
 			newTaskField.textAlignment = .left
 			newTaskField.frame = CGRect(x: 65, y: yPos-5, width: 280, height: 40)
-			// newTaskField.addTarget(self, action: #selector(self.addNewItem(_:)), for: .touchUpInside)
+			newTaskField.addTarget(self, action: #selector(self.addNewItem(_:)), for: .touchDown)
 			// cannot do the above, need to find a roundabout way
 			scrollView.addSubview(newTaskField)
 			
