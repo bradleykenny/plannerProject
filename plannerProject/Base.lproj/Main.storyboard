@@ -46,9 +46,10 @@
             </objects>
             <point key="canvasLocation" x="-574" y="1282"/>
         </scene>
-        <!--SOmething new-->
+        <!--CHANGE THIS-->
         <scene sceneID="iAb-iR-wSc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-wY-0rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Lic-QO-TBc" customClass="HomeController" customModule="plannerProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6q3-b8-GKy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -69,17 +70,16 @@
                             <outlet property="delegate" destination="Lic-QO-TBc" id="X21-iz-YQ3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SOmething new" id="d0G-NM-R4y"/>
+                    <navigationItem key="navigationItem" title="CHANGE THIS" id="d0G-NM-R4y"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-wY-0rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046" y="296"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="HGB-gB-WGN">
             <objects>
                 <navigationController id="dZ8-Ex-CII" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mqd-1w-qZi"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house@25" id="mqd-1w-qZi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gBs-hv-VHF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -244,7 +244,7 @@
         <scene sceneID="JZm-bU-kcQ">
             <objects>
                 <navigationController title="To Do" id="OZg-V2-ifW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="To Do" image="checklist@25" selectedImage="checklist@25" id="Omk-Ag-qbw"/>
+                    <tabBarItem key="tabBarItem" title="My Things" image="user@25" selectedImage="user@25" id="Omk-Ag-qbw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="WFL-Fh-G9c">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -259,6 +259,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checklist@25" width="37.5" height="37.5"/>
+        <image name="house@25" width="20" height="20"/>
+        <image name="user@25" width="18.75" height="18.75"/>
     </resources>
 </document>
