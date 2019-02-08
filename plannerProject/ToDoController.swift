@@ -67,7 +67,19 @@ struct Agenda {
 		}
 		
 		formatter.dateFormat = "d"
-		inWords.append(formatter.string(from: date))
+		let day = formatter.string(from: date)
+		inWords.append(day)
+		
+		
+//		if (Int(day) == 1 || Int(day) % 10 == 1 || Int(day) % 20 == 1 || Int(day) % 30 == 1) {
+//			inWords.append("st")
+//		} else if (Int(day) == 2 || Int(day) % 10 == 2 || Int(day) % 20 == 2) {
+//			inWords.append("nd")
+//		} else if (Int(day) == 3 || Int(day) % 10 == 3 || Int(day) % 20 == 3) {
+//			inWords.append("rd")
+//		} else {
+//			inWords.append("th")
+//		}
 		
 		if (shortMonth) {
 			formatter.dateFormat = "MMM"
