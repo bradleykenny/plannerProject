@@ -9,9 +9,6 @@
 import UIKit
 
 class HomeController: UITableViewController {
-
-	@IBOutlet weak var cardThing: UIView!
-	@IBOutlet weak var cardButton: UIButton!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +17,5 @@ class HomeController: UITableViewController {
 		self.title = "Home" // sets title of tab
 		
 		print(thingsToDo)
-		
     }
 }

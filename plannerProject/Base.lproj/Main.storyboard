@@ -49,7 +49,6 @@
         <!--CHANGE THIS-->
         <scene sceneID="iAb-iR-wSc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-wY-0rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Lic-QO-TBc" customClass="HomeController" customModule="plannerProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6q3-b8-GKy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -66,13 +65,6 @@
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xI-Hz-UAv">
                                             <rect key="frame" x="10" y="10" width="355" height="180"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQb-yi-ppf">
-                                                    <rect key="frame" x="154" y="75" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
-                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
@@ -86,11 +78,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="CHANGE THIS" id="d0G-NM-R4y"/>
-                    <connections>
-                        <outlet property="cardButton" destination="HQb-yi-ppf" id="p72-is-5Jf"/>
-                        <outlet property="cardThing" destination="5xI-Hz-UAv" id="kBw-2a-Ugz"/>
-                    </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-wY-0rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046" y="296"/>
         </scene>
