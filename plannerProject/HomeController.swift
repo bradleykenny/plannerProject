@@ -15,7 +15,11 @@ class HomeController: UITableViewController {
 
 		navigationController?.navigationBar.prefersLargeTitles = true
 		self.title = "Home" // sets title of tab
-		
-		print(thingsToDo)
     }
+}
+
+class DummyData {
+	func addData() {
+		
+	}
 }

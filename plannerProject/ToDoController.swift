@@ -8,8 +8,24 @@
 
 import UIKit
 
-var thingsToDo: [ToDo] = []
+var thingsToDo: [Agenda] = []
 var selected = 0
+
+// 4 types of things to share: agenda, todo, task, note
+
+struct Note {
+	var description: String
+	var image: UIImage!
+	
+	init(description: String) {
+		self.description = description
+	}
+	
+	init(description: String, image: UIImage) {
+		self.description = description
+		self.image = image
+	}
+}
 
 struct Task {
 	var description: String
@@ -21,7 +37,7 @@ struct Task {
 	}
 }
 
-struct ToDo {
+struct Agenda {
 	var date: Date
 	var title: String
 	var todos: [String]
@@ -100,11 +116,11 @@ class ToDoController: UITableViewController {
 		editButton.title = "Edit"
 		
 		/*** BEGIN TEST DATA ***/
-		let one = ToDo(date: Date(timeInterval: -86400 * 1, since: Date()), title: "Strawberry")
-		let two = ToDo(date: Date(timeInterval: -86400 * 2, since: Date()), title: "Apple")
-		let three = ToDo(date: Date(timeInterval: -86400 * 3, since: Date()), title: "Some Really Long Title")
-		let four = ToDo(date: Date(timeInterval: -86400 * 4, since: Date()), title: "Big Blueberry")
-		let five = ToDo(date: Date(timeInterval: -86400 * 5, since: Date()), title: "Banana")
+		let one = Agenda(date: Date(timeInterval: -86400 * 1, since: Date()), title: "Strawberry")
+		let two = Agenda(date: Date(timeInterval: -86400 * 2, since: Date()), title: "Apple")
+		let three = Agenda(date: Date(timeInterval: -86400 * 3, since: Date()), title: "Some Really Long Title")
+		let four = Agenda(date: Date(timeInterval: -86400 * 4, since: Date()), title: "Big Blueberry")
+		let five = Agenda(date: Date(timeInterval: -86400 * 5, since: Date()), title: "Banana")
 		
 		thingsToDo.append(one)
 		thingsToDo.append(two)
@@ -165,7 +181,7 @@ class ToDoController: UITableViewController {
 		return calendar.component(.year, from: date)
 	}
 	
-	public func compareDatesToArr(arr: [ToDo], date: Date) -> Bool {
+	public func compareDatesToArr(arr: [Agenda], date: Date) -> Bool {
 		for temp in arr {
 			if (getYear(date: temp.date) == getYear(date: date)) {
 				if (getMonth(date: temp.date) == getMonth(date: date)) {
