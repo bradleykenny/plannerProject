@@ -1,21 +1,26 @@
-//
-//  HomeController.swift
-//  plannerProject
-//
-//  Created by Bradley Kenny on 6/2/19.
-//  Copyright © 2019 Bradley Kenny. All rights reserved.
-//
-
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-
+		
 		navigationController?.navigationBar.prefersLargeTitles = true
 		self.title = "Home" // sets title of tab
+		
+		
     }
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath)
+		let text = UIButton(type: .roundedRect)
+		cell.addSubview(text)
+		return cell
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return 3
+	}
 }
 
 class DummyData {
