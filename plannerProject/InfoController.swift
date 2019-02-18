@@ -75,7 +75,7 @@ class InfoController: UIViewController, UITextFieldDelegate {
 				scrollView.addSubview(taskField)
 			}
 			
-			var newTask = Task(description: "")
+			let newTask = Task(description: "")
 			let newTaskField = UITextField() // should disable editing
 			newTaskField.returnKeyType = .done
 			newTaskField.placeholder = "New task..."

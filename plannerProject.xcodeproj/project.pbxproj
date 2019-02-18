@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2A59DC221A9345003869D1 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2A59DB221A9345003869D1 /* DataModels.swift */; };
 		1C2EF8D5220D602F006D7D3F /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF8D4220D602E006D7D3F /* Structs.swift */; };
 		1C44C0C3220AC54300A1493E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44C0C2220AC54300A1493E /* HomeController.swift */; };
 		1C7248C921BF9EA3003E8E27 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7248C821BF9EA3003E8E27 /* CalendarCell.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C2A59DB221A9345003869D1 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		1C2EF8D4220D602E006D7D3F /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		1C44C0C2220AC54300A1493E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1C7248C821BF9EA3003E8E27 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				1C9686E321ABC9850039390B /* Assets.xcassets */,
 				1C7248C821BF9EA3003E8E27 /* CalendarCell.swift */,
 				1C44C0C2220AC54300A1493E /* HomeController.swift */,
+				1C2A59DB221A9345003869D1 /* DataModels.swift */,
 				1C9686E821ABC9850039390B /* Info.plist */,
 				1C9686F221ABE2780039390B /* InfoController.swift */,
 				1C9686E521ABC9850039390B /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C2A59DC221A9345003869D1 /* DataModels.swift in Sources */,
 				1C2EF8D5220D602F006D7D3F /* Structs.swift in Sources */,
 				1C9686DF21ABC9830039390B /* ViewController.swift in Sources */,
 				1C7248C921BF9EA3003E8E27 /* CalendarCell.swift in Sources */,
