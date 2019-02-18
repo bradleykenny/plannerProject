@@ -46,43 +46,6 @@
             </objects>
             <point key="canvasLocation" x="-574" y="1282"/>
         </scene>
-        <!--CHANGE THIS-->
-        <scene sceneID="iAb-iR-wSc">
-            <objects>
-                <tableViewController id="Lic-QO-TBc" customClass="HomeController" customModule="plannerProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6q3-b8-GKy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="200" id="ZCD-ov-W41">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZCD-ov-W41" id="fjA-CD-yye">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xI-Hz-UAv">
-                                            <rect key="frame" x="10" y="10" width="355" height="180"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </view>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Lic-QO-TBc" id="at6-eg-Sy7"/>
-                            <outlet property="delegate" destination="Lic-QO-TBc" id="X21-iz-YQ3"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="CHANGE THIS" id="d0G-NM-R4y"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-wY-0rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1046" y="296"/>
-        </scene>
         <!--Home-->
         <scene sceneID="HGB-gB-WGN">
             <objects>
@@ -93,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Lic-QO-TBc" kind="relationship" relationship="rootViewController" id="BjD-fn-vpp"/>
+                        <segue destination="Zuh-Ia-3qM" kind="relationship" relationship="rootViewController" id="ObB-oW-yYa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQ4-5I-RDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,6 +227,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36Z-Eo-sht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="212" y="978"/>
+        </scene>
+        <!--Cards-->
+        <scene sceneID="Fd6-pz-cK2">
+            <objects>
+                <viewController id="Zuh-Ia-3qM" customClass="HomeController" customModule="plannerProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HEi-eR-RdS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-uO-zW6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aCk-oq-uSy">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NZS-Ip-OQF">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hTh-jg-B86"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="DD5-ow-VGP"/>
+                    <navigationItem key="navigationItem" title="Cards" id="vFP-6H-7Pd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WDP-b6-qbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045.5999999999999" y="295.50224887556226"/>
         </scene>
     </scenes>
     <resources>
