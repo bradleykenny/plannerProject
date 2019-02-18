@@ -54,7 +54,6 @@
 			children = (
 				1C9686DB21ABC9830039390B /* plannerProject */,
 				1C9686DA21ABC9830039390B /* Products */,
-				235910D0B8F30FA5C9325F9E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,13 +83,6 @@
 				1C9686DE21ABC9830039390B /* ViewController.swift */,
 			);
 			path = plannerProject;
-			sourceTree = "<group>";
-		};
-		235910D0B8F30FA5C9325F9E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
