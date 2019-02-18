@@ -26,7 +26,7 @@ class ToDoController: UITableViewController {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
 		cell.textLabel?.text = thingsToDo[indexPath.row].title
 		cell.detailTextLabel?.text = thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true)
-		cell.layer.cornerRadius = 8.0
+		cell.layer.cornerRadius = 8.0		
 		
 		// toDoTable.separatorColor = .gray // TODO: style this better
 		
