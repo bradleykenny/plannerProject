@@ -12,9 +12,10 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     }
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath)
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath) as! HomeCollectionViewCell
 		let text = UIButton(type: .roundedRect)
 		cell.addSubview(text)
+		cell.cardButton.setTitle("HELLO", for: .normal)
 		return cell
 	}
 	
