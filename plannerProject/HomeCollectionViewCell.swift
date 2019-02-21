@@ -11,4 +11,5 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
 	@IBOutlet weak var cardButton: UIButton!
+	@IBOutlet weak var cardHeading: UILabel!
 }

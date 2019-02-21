@@ -14,6 +14,7 @@ class addController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var addButton: UIButton!
 	@IBOutlet weak var datePicker: UIDatePicker!
 	@IBOutlet weak var showDateButton: UIButton!
+	let somethingn = UITextField()
 	
 	let formatter = DateFormatter()
 	
@@ -47,10 +48,9 @@ class addController: UIViewController, UITextFieldDelegate {
 		datePicker.isHidden = true
 		
 		// agenda description
-		let description = UITextField()
-		description.frame = CGRect(x: 20, y: datePicker.frame.minY, width: view.frame.width-30, height: 100)
-		description.placeholder = "Description"
-		view.addSubview(description)
+		somethingn.frame = CGRect(x: 20, y: datePicker.frame.minY, width: view.frame.width-30, height: 100)
+		somethingn.placeholder = "Description"
+		view.addSubview(somethingn)
     }
 	
 	@IBAction func addToArray(_ sender: Any) {
@@ -58,6 +58,7 @@ class addController: UIViewController, UITextFieldDelegate {
 			let temp = ToDoController()
 			if (!temp.compareDatesToArr(arr: thingsToDo, date: datePicker.date)) {
 				let newItem = Agenda(date: datePicker.date, title: input1.text!)
+				// get newItem somethingn text
 				thingsToDo.append(newItem)
 				thingsToDo = thingsToDo.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
 				self.navigationController?.popViewController(animated: true)

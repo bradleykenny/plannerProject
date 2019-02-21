@@ -15,7 +15,8 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
 		let card = collectionView.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath) as! HomeCollectionViewCell
 		
 		card.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
-		card.cardButton.setTitle(thingsToDo[indexPath.row].title, for: .normal)
+		card.cardHeading.text = thingsToDo[indexPath.row].title
+		card.cardButton.setTitle(thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true), for: .normal)
 		
 		// sets drop shadow on each cell
 //		cell.contentView.layer.cornerRadius = 4.0
