@@ -17,7 +17,8 @@ class InfoController: UIViewController, UITextFieldDelegate {
 		super.viewDidLoad()
 		
 		navigationController?.navigationBar.prefersLargeTitles = true
-		self.title = thingsToDo[selected].toString(shortMonth: false, includeDay: false, includeYear: false)
+		//self.title = thingsToDo[selected].toString(shortMonth: false, includeDay: false, includeYear: false)
+		self.title = thingsToDo[selected].title
 		
 		let scrollView = UIScrollView(frame: self.view.bounds)
 		scrollView.contentSize = self.view.bounds.size

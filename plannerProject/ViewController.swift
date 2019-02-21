@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  plannerProject
-//
-//  Created by Bradley Kenny on 26/11/18.
-//  Copyright © 2018 Bradley Kenny. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

@@ -22,7 +22,7 @@ class addController: UIViewController, UITextFieldDelegate {
 		
 		self.title = "New Plan"
 		
-		let color = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
+		let color = UIColor(red: 60/255, green: 172/255, blue: 255/255, alpha: 1.0)
 
 		input1.borderStyle = UITextField.BorderStyle.none
 		
@@ -37,7 +37,7 @@ class addController: UIViewController, UITextFieldDelegate {
 		addButton.setTitleColor(UIColor.white, for: .normal)
 		
 		// add date button
-		formatter.dateFormat = "E dd MMMM, yyyy"
+		formatter.dateFormat = "EEEE, dd MMMM, yyyy"
 		showDateButton.setTitle(formatter.string(from: datePicker.date), for: .normal)
 		showDateButton.layer.cornerRadius = 5.0
 		showDateButton.layer.backgroundColor = color.cgColor
@@ -45,6 +45,12 @@ class addController: UIViewController, UITextFieldDelegate {
 		// datePicker set-up
 		datePicker?.datePickerMode = UIDatePicker.Mode.date
 		datePicker.isHidden = true
+		
+		// agenda description
+		let description = UITextField()
+		description.frame = CGRect(x: 20, y: datePicker.frame.minY, width: view.frame.width-30, height: 100)
+		description.placeholder = "Description"
+		view.addSubview(description)
     }
 	
 	@IBAction func addToArray(_ sender: Any) {

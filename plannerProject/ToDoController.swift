@@ -1,11 +1,3 @@
-//
-//  ToDoController.swift
-//  plannerProject
-//
-//  Created by Bradley Kenny on 26/11/18.
-//  Copyright © 2018 Bradley Kenny. All rights reserved.
-//
-
 import UIKit
 
 var thingsToDo: [Agenda] = []
@@ -16,9 +8,8 @@ class ToDoController: UITableViewController {
 	@IBOutlet var toDoTable: UITableView!
 	@IBOutlet weak var editButton: UIBarButtonItem!
 	
-	// returns number of items in array
 	public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return (thingsToDo.count)
+		return thingsToDo.count
 	}
 	
 	// fills the cells with content from the array above (thingsToDo)
@@ -30,7 +21,7 @@ class ToDoController: UITableViewController {
 		
 		// toDoTable.separatorColor = .gray // TODO: style this better
 		
-		return(cell)
+		return cell
 	}
 	
 	// everything that will happen once the app has loaded

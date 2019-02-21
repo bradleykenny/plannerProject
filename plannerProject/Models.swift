@@ -3,10 +3,6 @@
 import Foundation
 import UIKit
 
-class DataModels {
-	
-}
-
 // 4 types of things to share: agenda, todo, task, note
 
 class Note {
