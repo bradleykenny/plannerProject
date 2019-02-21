@@ -1,0 +1,17 @@
+DATABASES:
+
+USERS {
+	! userID: Int
+	firstName: String
+	lastName: String
+	DOB: Date 
+}
+
+POSTS {
+
+}
+
+PREMADE {
+
+}
+
