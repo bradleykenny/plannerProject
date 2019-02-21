@@ -58,7 +58,7 @@ class addController: UIViewController, UITextFieldDelegate {
 			let temp = ToDoController()
 			if (!temp.compareDatesToArr(arr: thingsToDo, date: datePicker.date)) {
 				let newItem = Agenda(date: datePicker.date, title: input1.text!)
-				// get newItem somethingn text
+				// TODO: get newItem somethingn text
 				thingsToDo.append(newItem)
 				thingsToDo = thingsToDo.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
 				self.navigationController?.popViewController(animated: true)
