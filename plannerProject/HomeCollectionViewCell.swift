@@ -9,9 +9,8 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-    
-	@IBOutlet weak var cardButton: UIButton!
 	@IBOutlet weak var cardTime: UILabel!
-	@IBOutlet weak var cardUsername: UILabel!
+	@IBOutlet weak var cardUsername: UIButton!
 	@IBOutlet weak var cardUserImage: UIImageView!
+	@IBOutlet weak var cardText: UILabel!
 }
