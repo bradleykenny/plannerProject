@@ -15,8 +15,11 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
 		let card = collectionView.dequeueReusableCell(withReuseIdentifier: "card", for: indexPath) as! HomeCollectionViewCell
 		
 		card.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
-		card.cardHeading.text = thingsToDo[indexPath.row].title
-		card.cardButton.setTitle(thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true), for: .normal)
+		card.cardUsername.text = "@bradleykenny"
+		card.cardTime.text = thingsToDo[indexPath.row].toString(shortMonth: false, includeDay: true, includeYear: true)
+		card.cardButton.setTitle(thingsToDo[indexPath.row].thoughts, for: .normal)
+		card.cardUserImage.image = UIImage(named: "grayCircle")
+		
 		
 		return card
 	}

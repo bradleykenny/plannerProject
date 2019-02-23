@@ -11,5 +11,7 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
 	@IBOutlet weak var cardButton: UIButton!
-	@IBOutlet weak var cardHeading: UILabel!
+	@IBOutlet weak var cardTime: UILabel!
+	@IBOutlet weak var cardUsername: UILabel!
+	@IBOutlet weak var cardUserImage: UIImageView!
 }

@@ -54,6 +54,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gBs-hv-VHF">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23529411759999999" green="0.67450980390000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Zuh-Ia-3qM" kind="relationship" relationship="rootViewController" id="ObB-oW-yYa"/>
@@ -219,6 +220,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="WFL-Fh-G9c">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23529411759999999" green="0.67450980390000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Xkc-5E-1Kl" kind="relationship" relationship="rootViewController" id="sJ3-t5-VgN"/>
@@ -240,37 +242,50 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="aCk-oq-uSy">
-                                    <size key="itemSize" width="374" height="96"/>
+                                    <size key="itemSize" width="374" height="112"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="card" id="NZS-Ip-OQF" customClass="HomeCollectionViewCell" customModule="plannerProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.5" y="0.0" width="374" height="96"/>
+                                        <rect key="frame" x="0.5" y="0.0" width="374" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r0-mt-o5U">
-                                                    <rect key="frame" x="20" y="12" width="334" height="36"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-b7-0Z6">
+                                                    <rect key="frame" x="20" y="71" width="334" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@bradleykenny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r0-mt-o5U">
+                                                    <rect key="frame" x="78" y="16" width="276" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-b7-0Z6">
-                                                    <rect key="frame" x="20" y="40" width="334" height="44"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nc9-IQ-5fv">
+                                                    <rect key="frame" x="20" y="13" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 hour ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqu-v5-qGp">
+                                                    <rect key="frame" x="78" y="39" width="276" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cardButton" destination="IUd-b7-0Z6" id="tgm-iw-ZlI"/>
-                                            <outlet property="cardHeading" destination="3r0-mt-o5U" id="SJp-zH-hOQ"/>
+                                            <outlet property="cardTime" destination="Qqu-v5-qGp" id="6Rn-So-NXV"/>
+                                            <outlet property="cardUserImage" destination="nc9-IQ-5fv" id="9Mf-4f-Thn"/>
+                                            <outlet property="cardUsername" destination="3r0-mt-o5U" id="TgD-v0-4dA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -284,7 +299,7 @@
                         <constraints>
                             <constraint firstItem="LBm-uO-zW6" firstAttribute="trailing" secondItem="hTh-jg-B86" secondAttribute="trailing" id="Ceu-yy-lsK"/>
                             <constraint firstAttribute="bottom" secondItem="LBm-uO-zW6" secondAttribute="bottom" id="SI3-SA-3v6"/>
-                            <constraint firstItem="LBm-uO-zW6" firstAttribute="top" secondItem="hTh-jg-B86" secondAttribute="top" id="fEu-n7-WSV"/>
+                            <constraint firstItem="LBm-uO-zW6" firstAttribute="top" secondItem="hTh-jg-B86" secondAttribute="top" id="SrU-uv-E02"/>
                             <constraint firstItem="LBm-uO-zW6" firstAttribute="leading" secondItem="hTh-jg-B86" secondAttribute="leading" id="fkY-v2-dtX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTh-jg-B86"/>
