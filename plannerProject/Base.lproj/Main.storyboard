@@ -200,6 +200,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="rgB-Wn-CiZ" kind="show" identifier="toView" trigger="accessoryAction" id="1Sa-Sg-HQd">
                                         <segue key="commit" inheritsFrom="parent" id="HEo-50-NNh"/>
@@ -368,7 +369,7 @@
         <image name="user@25" width="18.75" height="18.75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hy5-gk-eEU"/>
-        <segue reference="bIb-4s-Qfm"/>
+        <segue reference="1Sa-Sg-HQd"/>
+        <segue reference="Ztc-QV-2zH"/>
     </inferredMetricsTieBreakers>
 </document>
