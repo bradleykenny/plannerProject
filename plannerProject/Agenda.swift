@@ -1,38 +1,5 @@
-// Data Models for the application.
-
 import Foundation
 import UIKit
-
-// 4 types of things to share: agenda, todo, task, note
-
-class Note {
-	var description: String
-	var image: UIImage!
-	var date: Date
-	
-	init(description: String) {
-		self.description = description
-		self.date = Date()
-	}
-	
-	init(description: String, image: UIImage) {
-		self.description = description
-		self.image = image
-		self.date = Date()
-	}
-}
-
-class Task {
-	var description: String
-	var check: Bool
-	var date: Date
-	
-	init(description: String) {
-		self.description = description
-		self.check = false
-		self.date = Date()
-	}
-}
 
 class Agenda {
 	var date: Date
